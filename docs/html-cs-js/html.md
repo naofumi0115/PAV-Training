@@ -1,4 +1,6 @@
 # HTML
+These items are the basic content of HTML that you should study first
+
 ## Basic
 - [Introduction](https://www.w3schools.com/html/html_intro.asp)
 - [HTML basic](https://www.w3schools.com/html/html_basic.asp)

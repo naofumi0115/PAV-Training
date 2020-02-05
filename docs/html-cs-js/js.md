@@ -1,4 +1,7 @@
 # JavaScript (JS)
+These items are the basic content of JS that you should study first
+
+# Basic
 - [JS Introduction](https://www.w3schools.com/js/js_intro.asp)
 - [JS Where To](https://www.w3schools.com/js/js_whereto.asp)
 - [JS Output](https://www.w3schools.com/js/js_output.asp)
