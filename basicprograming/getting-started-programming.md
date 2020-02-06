@@ -20,7 +20,7 @@
 1. Find the sum of the odd numbers between 0 to 50.
 2. Completed below function to calculate the [factorial](https://en.wikipedia.org/wiki/Factorial) of a number (a non-negative integer). The function accepts the number as an argument.
 
-```
+```php
 <?php
 function factorialOfNumber($n)
 {
