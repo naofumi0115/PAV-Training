@@ -14,11 +14,11 @@ Just like we humans can understand few languages (English, French, Japanese, Vie
 
 In short, a programming language is the set of instructions through which humans interact with computers.
 
-In this document, we will talk about programing language named PHP.
+In this document, we will learn about programing language named PHP.
 
 ## How To Use This Document
 
-There are 2 parts in each lession: introduction and example source code. Please read them care full and click the button "Try it yourself" to modify and excute the examples source code.
+There are 2 parts in each lession: introduction and example source code. Please read them carefully and click the button "Try it yourself" to modify and excute the examples source code.
 
 
 ## Basic Programing
