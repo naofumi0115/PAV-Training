@@ -14,7 +14,7 @@ cd my-webpage
 touch index.html # create the empty file
 ```
 
->If your did not know the linux commands, [check it here](./../docs/tools/linux-command.md). Or you can you [Visual Studio Code](https://code.visualstudio.com/) editor to make it. 
+>If your did not know the linux commands, [check it here](./../docs/tools/linux-command.md). Or you can you [Visual Studio Code](https://code.visualstudio.com/) editor to make it.
 >> [Study more VS Code](https://code.visualstudio.com/docs/introvideos/basics)
 
 To help your source code safe, you should store it on the cloud instead of your local machine.
@@ -77,11 +77,11 @@ Look down the mock-up layout, From `TOP to BOTTOM`, you will see and can split i
 So we will split it out 4 parts.
 ```html
 <!-- index.html -->
-<header style="background-color: #5F524F; height: 60px;"> 
-    this block is for the The header 
+<header style="background-color: #5F524F; height: 60px;">
+    this block is for the The header
 </header>
-<nav style="background-color: blue; height: 40px;"> 
-    This block is for navigation bar (menu) 
+<nav style="background-color: blue; height: 40px;">
+    This block is for navigation bar (menu)
 </nav>
 <div id="main" style="background-color: green; height: 100px;">
     This block is for main content and SideBar</div>
@@ -107,7 +107,7 @@ Now, add HTML code for presenting 3 columns, replace the `<header>` tag by below
 
 ```html
 <!-- index.html -->
-<header style="background-color: #5F524F; height: 120px;"> 
+<header style="background-color: #5F524F; height: 120px;">
     <div>The logo</div>
     <div>The header slogan</div>
     <div>
@@ -122,7 +122,7 @@ Now, add HTML code for presenting 3 columns, replace the `<header>` tag by below
 Because `div` tag is a [block tag](https://www.w3schools.com/html/html_blocks.asp), so after close `</div>`  a new line will be added. It means each block will display on a line.
 
 ## 1.4 Add the navigation bar
-You can also structure the navigation bar like the header. I mean you present it as 4 columns. 
+You can also structure the navigation bar like the header. I mean you present it as 4 columns.
 But HTML has defined the list tag `li` to help you present kind of this case efficently.
 
 Replace the `<nav>` tag by below tags
@@ -143,7 +143,7 @@ Now, the layout will like this ![nav-layout](./images/tut1-nav.png)
 Because `<li>` is block layout by default, so each `<li>` will display as a line.
 But we can change it to [inline]() (mean many items in a line). We will change it later at the No.2 Styling the layout.
 
-__Review__: 
+__Review__:
 - [\<ul>](https://www.w3schools.com/tags/tag_ul.asp)
 - [inline & block ](https://www.w3schools.com/html/html_blocks.asp)
 
@@ -190,7 +190,7 @@ Combine all above step, you will have the layout similar this
 ### 2. Styling the layout
 So far, you have already prepared the simple layout structure. So now we will style for it.
 
-We have 3 ways to style our layout. 
+We have 3 ways to style our layout.
 1. Use the `style` attribue of HTML's tag (inline).
 2. Style internal html file (in the head tag)
 3. Use the external css file `*.css` and include it in the `<head>` tag.
@@ -213,7 +213,7 @@ Link the index.css file to index.html, put the `<link>` tag inside the `<head>` 
 </head>
 ```
 
-__Review__: 
+__Review__:
 - [HTML CSS](https://www.w3schools.com/html/html_css.asp)
 
 2.1 Style the header
@@ -327,7 +327,7 @@ header div:first-child {
 
 By default is `transform`, only, but some browser does not have this property. but it has its owner.
 
-Example: 
+Example:
 - `-webkit-` is prefix for Chrome, Opera
 - `-moz-` is prefix for Fixfox
 - `-ms-` is prefix for Edge
@@ -343,7 +343,7 @@ Example:
 and in css, replace `#slogan` by `.slogan`
 
 3. Style for Search form
-   
+
 To display the icon at the end of input text, we can use google icon by below reference to load the [google font](https://www.w3schools.com/w3css/w3css_icons.asp) or [font awsome](https://www.w3schools.com/w3css/w3css_icons.asp)
 
 In this tut, we use google font. Add the `<link>` tag into the `head` tag like below:
@@ -419,7 +419,7 @@ nav {
 
 nav ul {
     /* allow centering to work  */
-    display: table; 
+    display: table;
     margin: 0 auto;
 }
 
@@ -508,7 +508,7 @@ So we add `<div id="scroll">...</div` block html code into the footer
         <li>Extra info 1</li>
     </ol>
     <h3> The footer</h3>
-    <div id="scroll"> 
+    <div id="scroll">
         <a href="#"> <i class="material-icons">arrow_drop_up</i></a>
     </div>
 </footer>
@@ -539,7 +539,7 @@ Style for the scroll-to-top button.
 >`position: fixed`: will set the element is always fixed at a position base on the value of `right` and `bottom`
 
 Now we add the javascript code to handle the action:
-- when user click on the `scroll to top` button, it will scroll to the top of the page (smooth) and invisible that button, 
+- when user click on the `scroll to top` button, it will scroll to the top of the page (smooth) and invisible that button,
 - when user scroll down again, the button will visible again.
 
 Similar `css`, we can write our `js` code internal (inside html file.). But we should separate it to easier when mantainence & enhancement.
@@ -560,7 +560,7 @@ Now, add the action when use click on that button. We will define a method `scro
 ```js
 // index.js
 function scrollToTop() {
-    window.scrollTo({top: 0, behavior: 'smooth'}); 
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 ```
@@ -569,7 +569,7 @@ To let this method works, you have to binding it to `scroll to top` button. Java
 
 ```html
 <!-- index.html -->
-<a href="javascript:void(0);" onclick="scrollToTop()"> 
+<a href="javascript:void(0);" onclick="scrollToTop()">
     <i class="material-icons">arrow_drop_up</i>
 </a>
 ```
@@ -618,7 +618,7 @@ The [load](https://www.w3schools.com/jsref/event_onload.asp) event will be trigg
 function toggleScrollButton() {
     const lastPosition = window.scrollY;
     const scrollBtn = document.getElementById('scroll');
-    
+
     if (lastPosition !== 0) {
         scrollBtn.setAttribute('style', 'display: block;');
     } else {
@@ -637,7 +637,9 @@ window.addEventListener('load', () => {
 ```
 
 
-Finally result, you can take a look for source [check here](https://scrimba.com/p/pKkanSW/c3PmZnfJ)
+Finally result, you can take a look for source code [check here](https://scrimba.com/p/pKkanSW/c3PmZnfJ)
+
+or in [src/html-css-js directory](./src/html-css-js)
 
 ___
 ### Exercise
