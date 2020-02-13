@@ -14,7 +14,7 @@ After each section, you have a `aggregate` exercise. This exerise will guild you
 
 We also link with other section such as setup environent for the server side, connect the database, eg to build the web page.
 
-In each section, It may have the `References` item. You can check and read more to get more information as well as get more understand 
+In each section, It may have the `References` item. You can check and read more to get more information as well as get more understand
 
 # Terminology term
 There are some keyword in these guide you may facing.
@@ -36,14 +36,15 @@ There are some keyword in these guide you may facing.
     c. [CSS](./docs/html-cs-js/css.md)
 
     d. [JavaScript](./docs/html-cs-js/js.md)
-2. Cookie / session
+2. [Cookie / session](./docs/cookie-session/readme.md)
 3. Local storage
 4. Web performance
 
 ## Tools / Others
 1. Git.
-2. Understand some of basic commands on linux: 
+2. Understand some of basic commands on linux:
 3. Others
 
 # [Exercise](./exercises/readme.md)
-1. [Build Webpage layout](./exercises/tut1.md)
+1. [Build a web page layout](./exercises/tut1.md)
+2. [Build a web server and use the cookie and session]()
