@@ -457,7 +457,7 @@ class PasswordReminder
 
 In the above code, we want to change the connection from MySQLConnection to MongoDBConnection, we no need to change constructor injection in PasswordReminder class. Because here PasswordReminder class depends upon on Abstractions, not on concretions.
 
-# Exercise 1: A code snippet to show how violates SOLID Principles and how we can fix it :
+# Exercise 1: A code snippet to show how violates SOLID Principles and how can we fix it? :
 ```php
 class Rectangle
 {
@@ -542,7 +542,7 @@ $obj = new CostManager();
 echo $obj->calculate($circle);
 ```
 
-# Exercise 2: A code snippet to show how violates SOLID Principles and how we can fix it :
+# Exercise 2: A code snippet to show how violates SOLID Principles and how can we fix it? :
 ```php
 interface workerInterface
 {
