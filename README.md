@@ -13,7 +13,14 @@ It takes some time to understand, but if you write code following the principles
 it will improve code quality and will help to understand the most well-designed software.
 
 To understand SOLID principles, you have to know the use of the interface clearly.
-If your concept is not clear about interface then you can read this [doc](https://medium.com/@NahidulHasan/understanding-use-of-interface-and-abstract-class-9a82f5f15837).
+If your concept is not clear about interface then you can read this [doc](https://github.com/lappv/PAV-Training/blob/basic-programing/basicprograming/oop-interface.md).
+
+Each SOLID Principles I had the example code in their folder.
+- SingleResponsiblityPrinciple
+- OpenClosedPrinciple
+- LiskovSubstitutionPrinciple
+- InterfaceSegregationPrinciple
+- DependencyInversionPrinciple
 
 I'm going to try to explain SOLID Principles in simplest way so that it's easy 
 for beginners to understand. Let's go through each principle one by one:
@@ -51,7 +58,7 @@ class OrdersReport
 ```
 
 Above class violates single responsibility principle. Why should this class retrieve data from database? It is related to the 
-persistence layer. The persistence layer deals with persisting (storing and retrieving) data from a data store (such as a database, for example).So it is not the responsibility of this class.
+persistence layer[doc](https://en.wikipedia.org/wiki/Multitier_architecture). The persistence layer deals with persisting (storing and retrieving) data from a data store (such as a database, for example).So it is not the responsibility of this class.
 
 Next method format is also not the responsibility of this class. Because we may need different format data such as XML, JSON, HTML etc.
 
@@ -208,26 +215,9 @@ Now we can find square's area without modifying CostManager class.
 
 ## Liskov Substitution Principle :
 
-The Liskov Substitution principle was introduced by Barbara Liskov in her conference 
-keynote "Data abstraction" in 1987.Barbara Liskov and Jeannette Wing formulated 
-the principle succinctly in a 1994 paper as follows:
+The Liskov Substitution principle was introduced by Barbara Liskov in 1987.
 
->Let φ(x) be a property provable about objects x of type T. Then φ(y) should be true for objects y of type S where S is a subtype of T.
-
-
-The human-readable version repeats pretty much everything that Bertrand Meyer 
-already has said, but it relies totally on a type-system:
-
-
->1. Preconditions cannot be strengthened in a subtype.
->2. Postconditions cannot be weakened in a subtype.
->3. Invariants of the supertype must be preserved in a subtype.
-
-Robert Martin made the definition sound more smoothly and concisely in 1996 :
-
->Functions that use pointers of references to base classes must be able to use objects of derived classes without knowing it.
-
-Or simply : Subclass/derived class should be substitutable for their base/parent class.
+>Subclass/Child class should be substitutable for their Superclass/parent class.
 
 It states that any implementation of an abstraction (interface) should be 
 substitutable in any place that the abstraction is accepted. Basically, 
@@ -236,7 +226,8 @@ we not only have a contract of input that the interface receives but also the
 output returned by different Classes implementing that interface; they should be 
 of the same type.
 
-A code snippet to show how violates LSP and how we can fix it :
+Two codes snippet to show how violates LSP.
+Example 1:
 
 ```php
 interface LessonRepositoryInterface
@@ -270,6 +261,33 @@ class DbLessonRepository implements LessonRepositoryInterface
         // return Lesson::all();
         // to fix this
         return Lesson::all()->toArray();
+    }
+}
+```
+
+Example 1:
+
+```php
+class VideoPlayer
+{
+    public function play($file)
+    {
+        // play the video
+    }
+}
+
+class AviVideoPlayer extends VideoPlayer
+{
+    public function play($file)
+    {
+        if (pathinfo($file, PATHINFO_EXTENSION) !== 'avi') {
+            /*
+                Violates LSP because:
+                  - preconditions for the subclass can't be greater
+                  - we can no longer substitute this behaviour anywhere else because the output could be different
+             */
+            throw new Exception;
+        }
     }
 }
 ```
@@ -439,4 +457,130 @@ class PasswordReminder
 
 In the above code, we want to change the connection from MySQLConnection to MongoDBConnection, we no need to change constructor injection in PasswordReminder class. Because here PasswordReminder class depends upon on Abstractions, not on concretions.
 
+# Exercise 1: A code snippet to show how violates SOLID Principles and how we can fix it :
+```php
+class Rectangle
+{
+    protected $width;
+    protected $height;
 
+    public setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    public setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    public function getHeight()
+    {
+        return $this->height;
+    }
+}
+
+class Square extends Rectangle
+{
+    public setWidth($width)
+    {
+        parent::setWidth($width);
+        parent::setHeight($width);
+    }
+
+    public setHeight($height)
+    {
+        parent::setHeight($height);
+        parent::setWidth($height);
+    }
+}
+
+class Circle
+{
+    public $radius;
+    public setRadius($radius)
+    {
+        $this->radius = $radius;
+    }
+
+    public function getRadius()
+    {
+        return $this->radius;
+    }
+}
+
+class CostManager
+{
+    public function calculate($shape)
+    {
+        $costPerUnit = 1.5;
+        if ($shape instanceof Rectangle) {
+            $area = $shape->width * $shape->height;
+        } else {
+            $area = $shape->radius * $shape->radius * pi();
+        }
+        
+        return $costPerUnit * $area;
+    }
+}
+$circle = new Circle();
+$circle->setRadius(5);
+
+$rect = new Rectangle();
+$rect->setWidth(8);
+$rect->setHeight(5);
+
+$sqr = new Square();
+$sqr->setWidth(5);
+
+$obj = new CostManager();
+echo $obj->calculate($circle);
+```
+
+# Exercise 2: A code snippet to show how violates SOLID Principles and how we can fix it :
+```php
+interface workerInterface
+{
+    public  function work();
+    public  function  sleep();
+}
+
+class HumanWorker implements workerInterface
+{
+    public  function work()
+    {
+        var_dump('works');
+    }
+
+    public  function  sleep()
+    {
+        var_dump('sleep');
+    }
+
+}
+
+class RobotWorker implements workerInterface
+{
+    public  function work()
+    {
+    	if ($this->hasPower()) {
+	   var_dump('works');
+    	}
+    }
+
+    public  function sleep()
+    {
+        // No need
+    }
+    
+    public  function hasPower()
+    {
+        // return true if robot have power, otherwise false.
+    }
+}
+```
