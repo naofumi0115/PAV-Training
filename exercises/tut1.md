@@ -642,27 +642,83 @@ Finally result, you can take a look for source code [check here](https://scrimba
 or in [src/html-css-js directory](./src/html-css-js)
 
 ___
-### Exercise
-Add the action for the seach form.
+# Homeworks
+## 1. Add the action for the seach form (1 hour).
+### Requirement
 - Define an array of result (string content)
-- When user input the text into the search box and enter.
-- If the text be included in your array data list, show it on the main content section `<div id="main-content">`
+- When user input the text into the search box and press enter.
+- If the text be included in your array data list (`2 sides matching`), show it on the main content section `<div id="main-content">`
 
-Suggestions:
+### Suggestions:
  - Use javascript property .innerHTML or .innerText to show you search result.
  - Use `keypress` event and check whether the enter key is `enter` (code = 13) or not before perform search.
+ - example for 2 sides matching:
+ ```js
+you have a string:  `You are practice with HTML and CSS`
+input: you          // result: You are practice with HTML and CSS
+input: you practice // result:
+input CSS           // resul: You are practice with HTML and CSS
+input HTML          // resul: You are practice with HTML and CSS
+ ```
+
  ___
 
+ ## 2. Build login form ( 1 days)
+ ### Requirement
+ - Build the login form and login information bar as the image.
+ - By default, the login will be hidden. When click on the `login` text, the login form will be displayed.
+ - Prepare some mock user name and password
+ - When the user input right username and password and click login button, change the name `Hi: Guest` to `Hi: ${username}`. then hide the login form.
 
+ ![login form](images/tut1-login-form.png)
+ ![login bar](images/tut1-login-bar.png)
 
+ ### Suggestion
+ - use css property: `posistion` to align the form at the top - right with the `px` you want
+ - Let the form showing when building the form & styling, after finish all, set `display: none` to hide it.
 
+## 3. Build some pages to display other kind of data.
+- Update the menu bar from dummy values to
+ ```
+- Home
+- Users
+- Courses
+- Trainers
 
+ ```
+### 3.1. Build a `Users` page to display the information of all users
 
+#### Requirement
+ 
+ - The layout was made by you, use what you learned and your designe ability to show below information in a table inlcudes:
+ ```
+    - header
+    - body 
+    - total row
+    - paging (optional)
+```
 
+- When users click on `Users` memu, a page with below info will be displayed
 
+- Assume that you have a Users table with below information: 
+ ```csv
+- username
+- password
+- name
+- address
+- status
+- login_date
+ ```
+ 
+>- Use the javascript to write whole data list into the `body` of that table.
 
+### 3.1. Build a `Courses` page to display all the course that you will study
+- Assume that you have a Courses table with below information: 
+```
+- id
+- course name
+- Author
+- duration (total time to study)
+- created date
 
-
-
-
-
+```

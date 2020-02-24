@@ -1,4 +1,4 @@
-# HTML-Tut
+# PAV Training course from scratch
 
 
 __**How to read this document**__
@@ -47,4 +47,5 @@ There are some keyword in these guide you may facing.
 
 # [Exercise](./exercises/readme.md)
 1. [Build a web page layout](./exercises/tut1.md)
-2. [Build a web server and use the cookie and session]()
+2. [Setup web server and apply cookie - session](./exercises/tut2.md)
+
