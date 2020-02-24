@@ -564,12 +564,12 @@ class HumanWorker implements workerInterface
 
 }
 
-class RobotWorker implements workerInterface
+class RobotWorker extends HumanWorker
 {
     public  function work()
     {
     	if ($this->hasPower()) {
-	   var_dump('works');
+	   parent::work();
     	}
     }
 
