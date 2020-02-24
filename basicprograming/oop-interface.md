@@ -1,6 +1,9 @@
 ## Interface
 
-An Interface allows the users to create programs, specifying the public methods that a class must implement, without involving the complexities and details of how the particular methods are implemented. It is generally referred to as the next level of abstraction. It resembles the abstract methods, resembling the abstract classes. An Interface is defined just like a class is defined but with the class keyword replaced by the interface keyword and just the function prototypes. The interface contains no data variables. The interface is helpful in a way that it ensures to maintain a sort of metadata for all the methods a programmer wishes to work on.
+An interface is a description of the actions that an object can do. Example, Animals (Cow, Dog, Cat...) have actions `eat` and `sound`. In this case of Animal, an Interface will define the actions, and other classes (Cow, Cat...) will decrible how is these actions.
+
+Interface allows the users to create programs, specifying the public methods that a class must implement.
+
 
 **Creating an Interface**
 
@@ -12,7 +15,7 @@ Following is an example of how to define an interface using the interface keywor
 interface MyInterfaceName { 
    public  function methodA(); 
    public  function methodB(); 
-}  
+}
 
 ?> 
 ```
@@ -96,12 +99,14 @@ class Cat implements Animal {
 }
 
 $cow = new Cow();
-$cow->animalSound();
-$cow->animalEat();
-
 $cat = new Cat();
-$cat->animalSound();
-$cat->animalEat();
+
+$animals = [$cow, $cat];
+
+foreach ($animal as $key => $animal) {
+  $animal->animalSound();
+  $animal->animalEat();
+}
 
 ```
 
@@ -114,4 +119,4 @@ The cat says meow meow
 The cat eats beefsteak
 ```
 
-[Try it](http://sandbox.onlinephpfunctions.com/code/af61c851c7b6c9c2a65c184b77acea8a8ae4e025)
+[Try it](http://sandbox.onlinephpfunctions.com/code/ca341e4e4cf67b413355c0aaa168a7692fecdd3e)
