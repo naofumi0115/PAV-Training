@@ -106,12 +106,6 @@ for (int i = 0; i < arr.length; i++) {
     System.out.println();
 }
 
-/*
-result: 
-5 12 17 9 3 
-13 4 8 14 1 
-9 6 3 7 21
-*/
 ```
 
 PHP example:
