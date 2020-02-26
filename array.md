@@ -114,7 +114,23 @@ result:
 */
 ```
 
-## Exercises
+PHP example:
+```php
+$arr = array(
+    array(5, 12, 17, 9, 3), //each item of $arr is an array
+    array(13, 4, 8, 14, 1),
+    array(9, 6, 3, 7, 21),
+);
+for ($i = 0; $i < sizeof($arr); $i++) {
+    for ($j = 0; $j < sizeof($arr); $j++) {
+        echo $arr[$i][$j] . ' ';
+    }
+    echo "\n";
+}
+
+```
+
+## Homework
 1. Given an array with N elements, calculate the average, sum, min and max of elements in array
 
 |   Input    | Average| Sum    | Min    | Max    |
