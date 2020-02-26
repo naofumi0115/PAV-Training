@@ -131,7 +131,8 @@ result:
 
 3. Given an array A of length N, calculate the minimum value of the following expression:
 
-      ![Exercise 3](./images/exercise-3.png)
+      ![Exercise 3](./images/exercise-3.png) 
+      
       0 <= i <= j < N
 
 |Input  | Output|
