@@ -1,6 +1,7 @@
 ## Interface
 
-An interface is a description of the actions that an object can do. Example, Animals (Cow, Dog, Cat...) have actions `eat` and `sound`. In this case of Animal, an Interface will define the actions, and other classes (Cow, Cat...) will decrible how is these actions.
+An interface is a description of the actions that an object can do.
+Example, Animals (Cow, Dog, Cat...) have actions `eat` and `sound`. In this case of Animal, an Interface will define the actions, and other classes (Cow, Cat...) will decrible how is these actions.
 
 Interface allows the users to create programs, specifying the public methods that a class must implement.
 
