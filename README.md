@@ -19,14 +19,9 @@ If your concept is not clear about interface then you can read this [doc](https:
 
 ## How To Use This Document
 
-There are 2 parts in each lession: introduction and example source code.
+There are 2 parts in each lession: introduction SOLID Principles and Home work.
 In introduction, I'm going to try to explain SOLID Principles in simplest way so that it's easy 
-for beginners to understand. Each SOLID Principles I had their folder such as.
-- SingleResponsiblityPrinciple
-- OpenClosedPrinciple
-- LiskovSubstitutionPrinciple
-- InterfaceSegregationPrinciple
-- DependencyInversionPrinciple
+for beginners to understand. 
 
 1. SOLID Principles
 - [Single Responsibility Principle](./SingleResponsiblityPrinciple/README.md)
@@ -38,3 +33,10 @@ for beginners to understand. Each SOLID Principles I had their folder such as.
 2. Home work
 - [Homework 1](./Exercise1/README.md)
 - [Homework 2](./Exercise2/README.md)
+
+Noted: Each SOLID Principles I had the code in their folder such as.
+- SingleResponsiblityPrinciple
+- OpenClosedPrinciple
+- LiskovSubstitutionPrinciple
+- InterfaceSegregationPrinciple
+- DependencyInversionPrinciple
