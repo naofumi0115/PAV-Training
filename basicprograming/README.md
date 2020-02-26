@@ -25,3 +25,4 @@ There are 2 parts in each lession: introduction and example source code. Please 
 
 1. [Getting started programing with PHP](./getting-started-programming.md)
 2. [Object-Oriented Programming (OOP) with PHP](./oop.md)
+3. [Design Pattern](./design-pattern.md)
