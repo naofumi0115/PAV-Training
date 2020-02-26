@@ -24,7 +24,7 @@ To implement a Singleton, we need:
 - Declaring constructor of the class to be private.
 - Providing a static method that returns a reference to the instance.
 
-```
+```php
 class Singleton {
     // Define a private static property to store the instance. 
     private static $instance = null;
@@ -44,27 +44,36 @@ class Singleton {
 }
 ```
 
-### An example of Singleton
+### Exercises
 
-Use singleton to implement database connection.
+#### Problem
+
+When we need to access database such as MySQL, we need only one Database Object with one connection to access the database. But if we create many objects, many connections will be created. It's not good for performance.
+
+#### Solution
+
+Use singleton to implement a class `DB` to access database to create only one object.
 
 ```php
 <?php
 class DB
 {
+    // Define a private static property to store the instance.
     private static $instance = null;
-    private $conn;
 
+    private $conn;
     private $host = 'localhost';
     private $user = 'root';
     private $pass = 'root';
     private $name = 'test';
 
+    // Declaring constructor of the class to be private.
     private function __construct()
     {
         $this->conn = new PDO("mysql:host={$this->host};dbname={$this->name}", $this->user, $this->pass);
     }
 
+    // Providing a static method that returns a reference to the instance.
     public static function getInstance()
     {
         if (null === self::$instance) {
@@ -91,5 +100,9 @@ print_r($connectionID2);
 
 ```
 
-Excute above source code, the value of `$connectionID1` and `$connectionID2` is the same.
+Excute above source code, the values of `$connectionID1` and `$connectionID2` are the same.
+
+### Home Work
+
+Use Singleton to implement a Logger class, the Logger contains method `log` with input parameter is a string and ouput the input string to screen.
 
