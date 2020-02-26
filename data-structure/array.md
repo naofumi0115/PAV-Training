@@ -140,3 +140,9 @@ result:
 |1 0 0 0 4 | -3 |
 |0 1 -4 0 4 | -7 |
 |-3 0 -1 0 -4 | -13 |
+
+4. Given an array with NxM elements, calculate the average, sum, min and max of elements in array
+
+|   Input    | Average| Sum    | Min    | Max    |
+|------------|--------|--------|--------|--------|
+|5 12 17 9 13 <br> 13 4 8 14 1  <br> 9 5 3 17 21 |  10  | 150  |  1  |  21 |
