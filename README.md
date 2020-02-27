@@ -23,3 +23,21 @@ There are 2 parts in each lession: introduction sql and then crud.
 - [CRUD](./crud.md)
 
 ## Home work
+
+1. Let’s create a MySQL database called SampleDB with one table Users with the following structure:
+![](./users-table.png)
+
+2. Let’s write code to insert a new record into the table Users with following details:
+- username: bill
+- password: secretpass
+- fullname: Bill Gates
+- email: bill.gates@microsoft.com
+
+3. Let’s write code to queries all records from the Users table.
+
+4. Let’s write code to update the record of “Bill Gates”.
+- password: 123456789
+- fullname: William Henry Bill Gates
+- email: bill.gates@microsoft.com
+
+5. Let’s write code to delete a record whose username field contains “bill”
