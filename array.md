@@ -124,6 +124,23 @@ for ($i = 0; $i < sizeof($arr); $i++) {
 
 ```
 
+## Exercise
+### Problem
+Write a program to print all element in array that have odd value
+
+### Solution
+```php
+<?php
+$arr = array(4, 12, 7, 15, 9);
+for ($i = 0; $i < sizeof($arr); $i++) {
+    if ($i % 2 != 0) { //check odd number
+        echo arr[$i] . "\n";
+    }
+}
+
+```
+
+
 ## Homework
 1. Given an array with N elements, calculate the average, sum, min and max of elements in array
 
