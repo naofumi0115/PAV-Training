@@ -23,8 +23,10 @@ There are 2 parts in each lession: introduction sql and then crud.
 - [CRUD](./crud.md)
 
 ## Home work
+Using [Run SQL Online](https://www.w3schools.com/sql/trysql.asp?filename=trysql_create_table) to test your sql statement.
+Pushing your answers in sql/crud/your_name branch. 
 
-1. Let’s create a MySQL database called SampleDB with one table Users with the following structure:
+1. Let’s create a table Users with the following structure:
 ![](./users-table.png)
 
 2. Let’s write code to insert a new record into the table Users with following details:
@@ -40,4 +42,4 @@ There are 2 parts in each lession: introduction sql and then crud.
 - fullname: William Henry Bill Gates
 - email: bill.gates@microsoft.com
 
-5. Let’s write code to delete a record whose username field contains “bill”
+5. Let’s write code to delete a record whose username field contains “bill”.
