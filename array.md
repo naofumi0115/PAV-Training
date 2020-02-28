@@ -142,7 +142,7 @@ for ($i = 0; $i < sizeof($arr); $i++) {
 
 
 ## Homework
-1. Given an array with N elements, calculate the average, sum, min and max of elements in array
+1. (Easy) Given an array with N elements, calculate the average, sum, min and max of elements in array
 
 |   Input    | Average| Sum    | Min    | Max    |
 |------------|--------|--------|--------|--------|
@@ -150,13 +150,13 @@ for ($i = 0; $i < sizeof($arr); $i++) {
 |13 4 8 14 1 |  8     |   40   |   1    |  14    |
 |9 5 3 7 21  |  9     |   45   |   3    |  21    |
 
-2. Given 2 arrays A and B (each array of size N). Print new array C such that: C[i] = A[i] + B[i], 0 <= i < N
+2. (Easy) Given 2 arrays A and B (each array of size N). Print new array C such that: C[i] = A[i] + B[i], 0 <= i < N
 
 |   Input A  | Input B| Output C|
 |------------|--------|---------|
 |1 2 3 4 5   | 4 5 3 2 10 | 5 7 6 6 15 |
 
-3. Given an array A of length N, calculate the minimum value of the following expression:
+3. (Hard) Given an array A of length N, calculate the minimum value of the following expression:
 
       ![Exercise 3](./images/exercise-3.png) 
       
@@ -168,7 +168,7 @@ for ($i = 0; $i < sizeof($arr); $i++) {
 |0 1 -4 0 4 | -7 |
 |-3 0 -1 0 -4 | -13 |
 
-4. Given an array with NxM elements, calculate the average, sum, min and max of elements in array
+4. (Easy) Given an array with NxM elements, calculate the average, sum, min and max of elements in array
 
 |   Input    | Average| Sum    | Min    | Max    |
 |------------|--------|--------|--------|--------|
