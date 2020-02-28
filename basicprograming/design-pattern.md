@@ -10,4 +10,4 @@ There are many design patterns: Singleton, Asbtract Factory, Factory method, Dep
 
 - [Singleton](./design_pattern_singleton.md)
 - [Factory](./design_pattern_factory.md)
-- Abstract Factory
+- [Strategy](./design_pattern_strategy.md)

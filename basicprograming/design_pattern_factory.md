@@ -2,7 +2,7 @@
 
 Another common design pattern is factory pattern. The main goal of this pattern is delivering an object by hiding all the complexities behind it. 
 
-Factory desing pattern allows interfaces for creating objects without exposing the object creation logic to the client.
+Factory design pattern allows interfaces for creating objects without exposing the object creation logic to the client.
 
 Above explaination may sound cryptic, so let's look at it using a real life scenario in the Exercise below.
 
@@ -174,10 +174,10 @@ Same with above example. You need output logs for your project, and Loggers need
 
 $ouputMsg = "This is a error message";
 $logger = new LoggerManager('file');
-$logger.log($ouputMsg);
+$logger->log($ouputMsg);
 
 $logger = new LoggerManager('std');
-$logger.log($ouputMsg);
+$logger->log($ouputMsg);
 ```
 
 The ouput on sreen will be:
