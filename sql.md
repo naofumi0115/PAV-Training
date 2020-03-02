@@ -6,7 +6,7 @@
 - [SQL Syntax](https://www.w3schools.com/sql/sql_syntax.asp)
 - [SQL Create Database](https://www.w3schools.com/sql/sql_create_db.asp)
 - [SQL AUTO INCREMENT ](https://www.w3schools.com/sql/sql_autoincrement.asp)
-- [SQL PRIMARY KEY] (https://www.w3schools.com/sql/sql_primarykey.asp)
+- [SQL PRIMARY KEY](https://www.w3schools.com/sql/sql_primarykey.asp)
 - [SQL FOREIGN KEY](https://www.w3schools.com/sql/sql_foreignkey.asp)
 - [SQL Drop Database](https://www.w3schools.com/sql/sql_drop_db.asp)
 - [SQL Create Table](https://www.w3schools.com/sql/sql_create_table.asp)
