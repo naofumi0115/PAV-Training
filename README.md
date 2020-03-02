@@ -14,7 +14,7 @@ The order of your SQL clauses counts in your query. This is not even a best prac
 ### Problem
 
 You have seen me write queries in different styles.
-E.g.
+
 A)
 ```sql
 SELECT * FROM flight_delays WHERE origin = 'PHL' AND time_delays > 6;
@@ -62,7 +62,7 @@ WHERE
 ### Problem
 
 You have seen me write queries in different styles.
-E.g.
+
 A)
 ```sql
 SELECT 
