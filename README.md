@@ -17,10 +17,10 @@ For developer, we will use Array and Linked List very common, Stack and Queue is
 ## Basic Data Structure
 
 1. [Array](./array.md)
-2. [Stack](./stack.md)
-3. [Queue](./queue.md)
-4. [Hash Table](./hash-table.md)
-5. [Linked List](./linked-list.md)
+2. [Linked List](./linked-list.md)
+3. [Set](./set.md)
+4. [Stack](./stack.md)
+5. [Queue](./queue.md)
 
 ## Advanced Data Structure
 
