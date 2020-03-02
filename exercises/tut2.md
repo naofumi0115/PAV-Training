@@ -2,7 +2,7 @@
 
 ## Precondition
 1. You have to finish previous section [1. HTML, CSS and JavaScript](./../docs/html-cs-js/readme.md). Because in this exercise, you have to reuse that layout.
-
+2. Change `Remember username` to `Remember me`
 
 > Please try by yourself first before you reference the source code.
 > Reference previouse exercise results [here](../src/html-css-js/exercises-2)
@@ -300,7 +300,50 @@ RewriteRule ^(.*)$ index.php [QSA]
 Don't know what is [.htaccess? Check here](http://www.htaccess-guide.com/) or [here](https://stackoverflow.com/questions/13170819/what-is-htaccess-file)
 
 3.2 Implement login
+
 To check if the user is not log in yet, then does not allow user view other pages.Before forward to any page, place you check logic a and redirect to the home page if they are not logged in.
+
+In the login form, we have to define the `action` (page) that will handle the login logic after submit (click button login)
+
+```html
+<!-- src/home/index.php -->
+<form id="login" method="post" action="/login">
+...
+</form>
+```
+
+Here, I will forward the submit action to `/login` page, so we also have to define a route for it.
+
+```php
+// index.php
+Route::add('/login', function() {
+    if (!empty( $_POST )) {
+        $username = $_POST['username'];
+        $pass = $_POST['password'];
+
+        if ( isset($username) && isset($pass) ) {
+            if ( isUserValid($username, $pass)) {
+                $_SESSION['LOGGED_IN'] = $username;
+                $_SESSION['USERNAME'] = $_POST['username'];
+            }
+        }
+    }
+
+    header('Location: /');
+    exit;
+}, 'post');
+
+function isUserValid($username, $password) {
+	return $username == 'pav' && $password == '123';
+}
+```
+
+Above, after add the route for `login`, I implemented the simple login logic and add a value to session, that value I will use to check whether the user have already login or not.
+
+**Note that**: you must place the `session_start();` before you using the session.
+
+- Currently, users can go to other page even they does not loggin yet. So to prevent the user view other page if they does not login yet. Before the route does its tasks, you have to check and redirect they to the page you want if they does not login.
+
 
 ```php
 // index.php
@@ -324,6 +367,53 @@ Route::add('/', function() { include 'src/home/index.php'; });
 
 ```
 
+4. Using cookie
+In login form, you have a checkbox `Remember me`, right? So now, if the user check in that checkbox, we will save that information (username) in 5 days.
+
+After add the value to session, check if the checkbox was checked, set the cookie for it.
+
+```php
+if ( isset($username) && isset($pass) ) {
+    if ( isUserValid($username, $pass)) {
+        $_SESSION['LOGGED_IN'] = $username;
+        $_SESSION['USERNAME'] = $_POST['username'];
+    }
+
+    if (isset($_POST['rememberUsername'])) {
+        setcookie('username', $username, time() + (24 * 60 * 60 * 5), "/"); // 5 days
+    }
+}
+
+```
+
+Check the result.
+
+On browser, `right-click` -> `Inspect`, then select tab `Application`
+![cookie value](./images/tut2-cookie-value.png)
+
+
+
 ### Review
 - [Php Session](https://www.w3schools.com/php/php_sessions.asp)
-- 
+- [PHP Cookie](https://www.w3schools.com/php/php_cookies.asp)
+- [PHP die](https://www.w3schools.com/php/func_misc_die.asp)
+
+
+# Homeworks
+1. Check if user not does not login yet, print the message to to main content: `You are not logged in!!! please login to view more info` (red color)
+
+The Result looks to like this:
+```html
+The main content go here
+
+You are not logged in!!! please login to view more info
+```
+
+2. (Easy) If the user logged in, Show `Hi: username` otherwise, show `Hi: Guest` in the loggin bar.
+3. (Easy) Set the session timeout for the server side (2 hours). It means after 30 minutes, the user must login again.
+4. (Medium) In case user check on `Remember me` and login is correct, save that session in 3 days. It means i can access to the web page during 3 days without needs to login again. After 3 days, I have to login again.
+
+> Note that: Do not increase the session timeout.
+
+5. (Medium) Refactor to the user can view the header, footer and sidebar like the `home` page when transit other remain pages.
+

@@ -61,7 +61,7 @@ Basically, you can use Cookie/Session to save anything inforamation as you want.
 - Use Cookie to store a small data (less than 4kb)
 
 - Use Session to store the `SECURE` data like access token, usename and password, etc
-- Use Session to store data that you want it to be destroy after terminate the session (close browser)
+- Use Session to store data that you want it to be destroy after terminate the session (session_destroy)
 - Use Session if you want store a litle bit large data and temporary in the server (from a few Mb to few hundred MB depends on the Framework/Language)
 
 
