@@ -12,23 +12,23 @@ __You can understand as:__
 
   The server can provide the resources for many clients at the same time.
 
-- The vehicle (car, bike, walk,...) that you used to go to the store is called `protocol`. In Client-Server model we called it is `Hypertext Transfer Protocol (HTTP or HTTPS)`
+- The vehicle (car, bike, walk,...) that used to transit the goods from the store to you is called `protocol`. In Client-Server model we called it is `Hypertext Transfer Protocol (HTTP or HTTPS)`
 - The store's address is called `Domain Name System (DNS)`
 - Beside, we have another ways to communicate with the server such as `Simple Mail Transfer Protocol [(SMTP)](https://whatismyipaddress.com/smtp), [Telnet](https://www.computerhope.com/jargon/t/telnet.htm).
 
 
 ![Client Server Model](./images/Client-Server_Model.jpg)
 
-> So Does it relate to `Cookie` and `Session`?
+> So, does it relate to `Cookie` and `Session`?
 
 *Example:*
 
-When you bought somethings, the store owner give you a bill which save some information about you and the store. And you keep that bill, and the store keep the copied one.
+When you bought somethings, the store owner give you a bill which save some information about you and the store and what you bougth. And you keep that bill, and the store keep the copied one.
 
 So the next some days, you don't satisfy about the goods you bougth, you wanna return it to the store. How the store know that you bougth their goods? Now, the bill was to to prove it.
 
-- The bill that you keeping was called `Cookie`.
-- The bill that the store owner keeping was called `Session`
+- The bill that you are keeping was called `Cookie`.
+- The bill that the store owner is keeping was called `Session`
 
 In Web model, `Cookie` was saved at you browser (at the Client). `Session` was saved at the Server.
 

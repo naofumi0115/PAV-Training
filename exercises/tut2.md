@@ -44,7 +44,6 @@ For example, instead of enter `localhost/pav-training` to entrance the web, you 
 vi /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
 ```
 
-
 ```c
 # httpd-vhosts.conf
 
@@ -56,6 +55,17 @@ vi /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
     CustomLog "logs/pav-training.com.log" common
 </VirtualHost>
 
+```
+
+- Remove the comment `#` in file `httpd.conf` to include the httpd-vhost.conf file.
+```sh
+vi Application/MAMP/conf/apache/httpd.conf
+```
+```conf
+# Application/MAMP/conf/apache/httpd.conf
+
+# Virtual hosts
+Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
 ```
 
 - Set virtual domain name for you website
