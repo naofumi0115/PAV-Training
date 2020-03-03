@@ -239,3 +239,54 @@ WHERE
 ```
 
 There are tons of [good reasons](https://stackoverflow.com/questions/3639861/why-is-select-considered-harmful) for that, but the top two are efficiency and readability. If you need one column from a table, why would you print all of them? It would mean you have to move more data from your SQL server to your computer – slowing down the process unnecessarily. And at the same time, if you add * and not column names in your query, you won’t have any clue what columns you have in your data table when you want to change something…
+
+## HomeWork
+
+Sample table: agents
+```sql
++------------+----------------------+--------------------+------------+-----------------+---------+
+| AGENT_CODE | AGENT_NAME           | WORKING_AREA       | COMMISSION | PHONE_NO        | COUNTRY |
++------------+----------------------+--------------------+------------+-----------------+---------+
+| A007       | Ramasundar           | Bangalore          |       0.15 | 077-25814763    |         |
+| A003       | Alex                 | London             |       0.13 | 075-12458969    |         |
+| A008       | Alford               | New York           |       0.12 | 044-25874365    |         |
+| A011       | Ravi Kumar           | Bangalore          |       0.15 | 077-45625874    |         |
+| A010       | Santakumar           | Chennai            |       0.14 | 007-22388644    |         |
+| A012       | Lucida               | San Jose           |       0.12 | 044-52981425    |         |
+| A005       | Anderson             | Brisban            |       0.13 | 045-21447739    |         |
+| A001       | Subbarao             | Bangalore          |       0.14 | 077-12346674    |         |
+| A002       | Mukesh               | Mumbai             |       0.11 | 029-12358964    |         |
+| A006       | McDen                | London             |       0.15 | 078-22255588    |         |
+| A004       | Ivan                 | Torento            |       0.15 | 008-22544166    |         |
+| A009       | Benjamin             | Hampshair          |       0.11 | 008-22536178    |         |
++------------+----------------------+--------------------+------------+-----------------+---------+
+```
+
+To get the columns 'working_area', average 'commission' and number of agents for each group of 'working_area' from the 'agents' table with the following condition -
+
+1. number of agents for each group of 'working_area' must be less than 3,
+
+the following SQL statement can be used:
+
+SQL Code:
+```sql
+select working_area, avg(commission),count(agent_name) from agents
+having count(agent_name)<3
+group by working_area order by 2,3 desc;
+```
+
+Output:
+```sql
+WORKING_AREA                        AVG(COMMISSION) COUNT(AGENT_NAME)
+----------------------------------- --------------- -----------------
+Hampshair                                       .11                 1
+Mumbai                                          .11                 1
+New York                                        .12                 1
+San Jose                                        .12                 1
+Brisban                                         .13                 1
+London                                          .14                 2
+Chennai                                         .14                 1
+Torento                                         .15                 1
+```
+
+Based on sql best practice, Please fix the above sql code.
