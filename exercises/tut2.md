@@ -1,5 +1,11 @@
 # Build a web server and using the Cookie and Session
 
+# Problem
+- You want to share your web page to everyone.
+- You want only the guys who have the the username/pass can view whole data of your web pages.
+- You want only the guys who does not have the username/pass can only view the home page
+
+# Solution and guide
 ## Precondition
 1. You have to finish previous section [1. HTML, CSS and JavaScript](./../docs/html-cs-js/readme.md). Because in this exercise, you have to reuse that layout.
 2. Change `Remember username` to `Remember me`
@@ -7,21 +13,22 @@
 > Please try by yourself first before you reference the source code.
 > Reference previouse exercise results [here](../src/html-css-js/exercises-2)
 
-# Build web server.
+## Build web server.
 As you know, the session was store at the server side. So to know how session works, we have to build a server.
 
 In this case, I'm using PHP server to because you are studing PHP too.
 
-## Install PHP environment for development
+### Install PHP environment for development
 To easier for setting up, you can install [XAMPP](https://www.apachefriends.org/download.html). It's containing `A`pache, `M`ariaDB and `P`HP just 1 click.
 
 > You can find another `combo` like [AMPP](http://ampps.com/downloads), [MAMP](https://www.mamp.info/en/downloads/), LAMP, etc
 
-## Build a login page and use the session to keep the login information.
+### Build a login page and use the session to keep the login information.
 
 1. Create a directory to host our web application.
 
 ```sh
+# some other tools set named the directory is `webroot` or `wwwroot` instead of htdocs
 cd /Applications/MAMP/htdocs
 mkdir pav-training
 
@@ -421,9 +428,10 @@ You are not logged in!!! please login to view more info
 
 2. (Easy) If the user logged in, Show `Hi: username` otherwise, show `Hi: Guest` in the loggin bar.
 3. (Easy) Set the session timeout for the server side (2 hours). It means after 30 minutes, the user must login again.
-4. (Medium) In case user check on `Remember me` and login is correct, save that session in 3 days. It means i can access to the web page during 3 days without needs to login again. After 3 days, I have to login again.
+4. (Hard) In case user check on `Remember me` and login is correct, save that session in 3 days. It means i can access to the web page during 3 days without needs to login again. After 3 days, I have to login again.
 
 > Note that: Do not increase the session timeout.
 
 5. (Medium) Refactor to the user can view the header, footer and sidebar like the `home` page when transit other remain pages.
+6. (Easy) Implement the logout function.
 

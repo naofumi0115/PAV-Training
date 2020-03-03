@@ -55,13 +55,14 @@ _For example_
 
 # When to use Cookie / Session?
 Basically, you can use Cookie/Session to save anything inforamation as you want. `BUT you SHOULD`
+- Cookie if you want to store data at the client, session if you want to save data at the server
 
 - Use Cookie to store the information that does `NOT NEED to SECURE`
-- Use Cookie to store value in short term (a few days)
+
 - Use Cookie to store a small data (less than 4kb)
 
 - Use Session to store the `SECURE` data like access token, usename and password, etc
-- Use Session to store data that you want it to be destroy after terminate the session (session_destroy)
+
 - Use Session if you want store a litle bit large data and temporary in the server (from a few Mb to few hundred MB depends on the Framework/Language)
 
 

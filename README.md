@@ -37,7 +37,7 @@ There are some keyword in these guide you may facing.
 
     d. [JavaScript](./docs/html-cs-js/js.md)
 2. [Cookie / session](./docs/cookie-session/readme.md)
-3. Local storage
+3. [Web Storage](./docs/storage/readme.md)
 4. Web performance
 
 ## Tools / Others
@@ -48,4 +48,5 @@ There are some keyword in these guide you may facing.
 # [Exercise](./exercises/readme.md)
 1. [Build a web page layout](./exercises/tut1.md)
 2. [Setup web server and apply cookie - session](./exercises/tut2.md)
+3. [Web storage homeworks](./exercises/tut3.md)
 
