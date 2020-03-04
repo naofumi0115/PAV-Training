@@ -4,7 +4,7 @@ Insertion sort is a simple sorting algorithm that works the way we sort playing 
 
 ## Flowchart of the Insertion Sort:
 
-![](/.img/insertionsort.png)
+![](./img/insertionsort.png)
 
 ## Following is the implementations of the Insertion Sort:
 ```php
