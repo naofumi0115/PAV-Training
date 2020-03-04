@@ -71,40 +71,39 @@ There are two important items to note on this function:
 1. The array is passed by reference into this function. This allows the array to be updated without returning it. If the language you write in doesn’t support pass by reference, there are ways around this, such as: making the array a global value (please don’t), and setting the return to be an array containing both the left hand index and the array we are sorting.
 
 2. When calculating the pivotIndex I added the built-in command floor() to the calculation. Apparently, in C, integer division automatically appears to round down. When I did no rounding at all or the round() command, the script fell into an infinite loop. When I used floor(), the script performed as it expected.
-## Illustration of partition() :
 
-## Following is the implementations of the Merge Sort:
+## Following is the implementations of the Quick Sort:
 ```php
 <?php 
 function partition(&$array, $left, $right) {
-        $pivotIndex = floor($left + ($right - $left) / 2);
-        $pivotValue = $array[$pivotIndex];
-        $i=$left;
-        $j=$right;
-        while ($i <= $j) {
-                while (($array[$i] < $pivotValue) ) {
-                        $i++;
-                }
-                while (($array[$j] > $pivotValue)) {
-                        $j--;
-                }
-                if ($i <= $j ) {
-                        $temp = $array[$i];
-                        $array[$i] = $array[$j];
-                        $array[$j] = $temp;
-                        $i++;
-                        $j--;
-                }
-        }
-        return $i;
+    $pivotIndex = floor($left + ($right - $left) / 2);
+    $pivotValue = $array[$pivotIndex];
+    $i=$left;
+    $j=$right;
+    while ($i <= $j) {
+            while (($array[$i] < $pivotValue) ) {
+                    $i++;
+            }
+            while (($array[$j] > $pivotValue)) {
+                    $j--;
+            }
+            if ($i <= $j ) {
+                    $temp = $array[$i];
+                    $array[$i] = $array[$j];
+                    $array[$j] = $temp;
+                    $i++;
+                    $j--;
+            }
+    }
+    return $i;
 }
 
 function quicksort(&$array, $left, $right) {
-        if($left < $right) {
-                $pivotIndex = partition($array, $left, $right);
-                quicksort($array,$left,$pivotIndex -1 );
-                quicksort($array,$pivotIndex, $right);
-        }
+    if($left < $right) {
+            $pivotIndex = partition($array, $left, $right);
+            quicksort($array,$left,$pivotIndex -1 );
+            quicksort($array,$pivotIndex, $right);
+    }
 }
 
 // A utility function to 
