@@ -90,4 +90,13 @@ print_r($set->get()); // print set
 ```
 
 ## Homework
-1. (Easy) You are learning English. Everyday, you caught a lot of new words, some of them you're already learned but forgetting now. Therefore, you want build a dictionary to check which one is new word, which is your forgetting word.
+1. (Easy) Given an integer array, lets build a set from this array.
+
+|Input|Output|
+|-----|------|
+|1 2 3 4 5 2 -1 5 2 7 11 11 -5|1 2 3 4 5 -1 7 11 -5|
+2. (Media) You are learning English. Everyday, you caught a lot of new words, some of them you're already learned but forgetting now. Therefore, you want build a dictionary to check which one is new word, which is your forgetting word.
+Example: 
+- Date 1: you caught: hello, hi, good morning, good night => your dictionary: (Hello, Hi, Good morning, Good night)
+- Date 2: you caught: hi, name, age => your dictionary: (Hello, Hi, Good morning, Good night, Name, Age)
+- Date 3: you caught: good morning, how are you, fine, thank => your dictionary: (Hello, Hi, Good morning, Good night, Name, Age, How are you, Fine, Thank)
