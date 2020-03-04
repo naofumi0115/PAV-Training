@@ -3,9 +3,11 @@
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
 
 ## Step-by-step example:
+
 Take an array of numbers " 5 1 4 2 8", and sort the array from lowest number to greatest number using bubble sort. In each step, elements written in bold are being compared. Three passes will be required;
 
 1. First Pass:
+
 ( **5 1** 4 2 8 ) –> ( **1 5** 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
 
 ( 1 **5 4** 2 8 ) –>  ( 1 **4 5** 2 8 ), Swap since 5 > 4
@@ -15,6 +17,7 @@ Take an array of numbers " 5 1 4 2 8", and sort the array from lowest number to 
 ( 1 4 2 **5 8** ) –> ( 1 4 2 **5 8** ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
 
 2. Second Pass:
+
 ( **1 4** 2 5 8 ) –> ( **1 4** 2 5 8 )
 
 ( 1 **4 2** 5 8 ) –> ( 1 **2 4** 5 8 ), Swap since 4 > 2
@@ -26,6 +29,7 @@ Take an array of numbers " 5 1 4 2 8", and sort the array from lowest number to 
 Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.
 
 3. Third Pass:
+
 ( **1 2** 4 5 8 ) –> ( **1 2** 4 5 8 )
 
 ( 1 **2 4** 5 8 ) –> ( 1 **2 4** 5 8 )
@@ -35,6 +39,7 @@ Now, the array is already sorted, but our algorithm does not know if it is compl
 ( 1 2 4 **5 8** ) –> ( 1 2 4 **5 8** )
 
 ## Following is the implementations of Bubble Sort.
+
 ```php
 <?php  
 // PHP program for implementation  
@@ -78,16 +83,19 @@ for ($i = 0; $i < $len; $i++)
 ```
 
 ## Output 
+
 ```php
 Sorted array:
 1 2 3 4 5 7 8 9
 ```
 
 ## Illustration :
+
 ()[./img/bubble-sort1.png]
 
 
 ## Optimized Implementation:
+
 The above function always runs O(n^2) time even if the array is sorted. It can be optimized by stopping the algorithm if inner loop didn’t cause any swap.
 
 ```php
@@ -146,8 +154,13 @@ for($i = 0; $i < $len; $i++)
 ## Analysis
 
 - Worst and Average Case Time Complexity: O(n^2). Worst case occurs when array is reverse sorted.
+
 - Best Case Time Complexity: O(n). Best case occurs when array is already sorted.
+
 - Auxiliary Space: O(1)
+
 - Boundary Cases: Bubble sort takes minimum time (Order of n) when elements are already sorted.
+
 - Sorting In Place: Yes
+
 - Stable: Yes
