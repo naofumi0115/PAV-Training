@@ -17,7 +17,7 @@ If r > l
 ```
 
 ## Step-by-step example:
-()[./img/Merge-Sort-Tutorial.png]
+![](./img/Merge-Sort-Tutorial.png)
 
 ## Following is the implementations of the Merge Sort:
 ```php
