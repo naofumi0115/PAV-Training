@@ -31,7 +31,7 @@ arr[] = 64 25 12 22 11
 
 ## Flowchart of the Selection Sort:
 
-![](/.img/Selection-sort-flowchart.jpg)
+![](./img/Selection-sort-flowchart.png)
 
 ## Following is the implementations of the Selection Sort:
 ```php
