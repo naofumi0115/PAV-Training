@@ -73,6 +73,9 @@ vi Application/MAMP/conf/apache/httpd.conf
 
 # Virtual hosts
 Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
+
+# Change from Listen 8888 to 80
+Listen 80
 ```
 
 - Set virtual domain name for you website
@@ -111,6 +114,8 @@ pav-training
 --- src
 ------ /home
          | index.php  // renamed index.html -> index.php
+         | index.js
+         | index.css
 ------ /users
          | index.php // contain the layout and content of users
 ------ /courses
@@ -119,8 +124,8 @@ pav-training
          | index.php // contain the layout and content of trainers
 ------ /helpers
          | route.php
------- index.css
------- index.js
+------ /common
+--- index.php
 ```
 
 If you want, you can also re-structure again too. Because in the real project, there are many pages, so if you place in the same directory. it's hard to manage and enhance.
