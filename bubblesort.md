@@ -91,8 +91,7 @@ Sorted array:
 
 ## Illustration :
 
-()[./img/bubble-sort1.png]
-
+![](./img/bubble-sort1.png)
 
 ## Optimized Implementation:
 
