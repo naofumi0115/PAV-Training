@@ -13,6 +13,6 @@
 - [Abstract Classes](https://www.w3schools.com/php/php_oop_classes_abstract.asp)
 - [Interfaces](./oop-interface.md)
 
-## Exercises
+## Homework
 
 Write a program that defines a shape class with a constructor that gives value to width and height. The define two sub-classes triangle and rectangle, that calculate the area of the shape area(). After that, define two variables: a triangle and a rectangle and then call the area() function in this two varibles.
