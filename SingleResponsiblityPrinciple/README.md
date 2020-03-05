@@ -8,6 +8,9 @@ One class should only serve one purpose, this does not imply that each class sho
 
 ### Problem
 
+Users want to print information of order report by condtion start date and end date following the specific format. 
+The orders save in orders table.
+
 Please look bad design at the following code :
 
 ```php
@@ -20,11 +23,13 @@ class OrdersReport
         $orders = $this->queryDBForOrders($startDate, $endDate);
         return $this->format($orders);
     }
+    
     protected function queryDBForOrders($startDate, $endDate)
     {   // If we would update our persistence layer in the future,
         // we would have to do changes here too. <=> reason to change!
         return DB::table('orders')->whereBetween('created_at', [$startDate, $endDate])->get();
     }
+    
     protected function format($orders)
     {   // If we changed the way we want to format the output,
         // we would have to make changes here. <=> reason to change!
@@ -32,6 +37,13 @@ class OrdersReport
     }
 }
 ```
+
+OrdersReport class have all functions to do everything.
+We will have problem if we want to change something in specification.
+For example:
+- We want to change condition to query orders records.
+- We want to change format the order layout.
+- We want to reuse format of order.
 
 ### Solution
 
