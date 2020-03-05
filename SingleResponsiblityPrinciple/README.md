@@ -39,6 +39,25 @@ class OrdersReport
 ```
 
 OrdersReport class have all functions to do everything.
+
+- Connecting to db and query orders table with condition start date and end date.
+```php
+protected function queryDBForOrders($startDate, $endDate)
+{   // If we would update our persistence layer in the future,
+    // we would have to do changes here too. <=> reason to change!
+    return DB::table('orders')->whereBetween('created_at', [$startDate, $endDate])->get();
+}
+```
+
+- Format order output 
+```php
+protected function format($orders)
+{   // If we changed the way we want to format the output,
+    // we would have to make changes here. <=> reason to change!
+    return '<h1>Orders: ' . $orders . '</h1>';
+}
+```
+
 We will have problem if we want to change something in specification.
 For example:
 - We want to change condition to query orders records.
@@ -80,6 +99,7 @@ interface OrdersOutPutInterface
 {
 	public function output($orders);
 }
+
 namespace Report;
 class HtmlOutput implements OrdersOutPutInterface
 {

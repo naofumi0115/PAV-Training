@@ -77,6 +77,6 @@ When calling fly function of Penguin class will throw Exception. Penguin class c
 ```php
 class Penguin extends Animal
 {
-    
+    //
 }
 ```
