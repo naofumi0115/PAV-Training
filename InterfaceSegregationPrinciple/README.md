@@ -11,16 +11,18 @@ Similar to the Single Responsibility Principle, the goal of the Interface Segreg
 
 ### Problem
 
+As worker, he will 2 actions working and sleeping. In here, we have human and robot class implement two the actions.
+
 Let’s see an example :
 
 ```php
-interface workerInterface
+interface WorkerInterface
 {
     public  function work();
-    public  function  sleep();
+    public  function sleep();
 }
 
-class HumanWorker implements workerInterface
+class HumanWorker implements WorkerInterface
 {
     public  function work()
     {
@@ -34,7 +36,7 @@ class HumanWorker implements workerInterface
 
 }
 
-class RobotWorker implements workerInterface
+class RobotWorker implements WorkerInterface
 {
     public  function work()
     {
@@ -51,8 +53,11 @@ class RobotWorker implements workerInterface
 In the above code, RobotWorker no needs sleep, but the class has to implement the sleep method because we know that all methods are abstract in the interface. It breaks the Interface segregation law.
 
 ### Solution
+
 1. Introduce new two interface instead of workerInterface.
+
 2. HumanWorker class should implement 2 method work and sleep.
+
 3. RobotWorker class should implement 1 method work.
 
 ```php
