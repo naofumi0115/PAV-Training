@@ -14,47 +14,69 @@ of the same type.
 ## Exercises
 
 ### Problem
-
-Please look bad design at the following code :
+We create an array containing the birds and then loop for the elements.
+Please look bad design at the following code.
 
 ```php
-class VideoPlayer
-{
-    public function play($file)
+class Animal {
+    public function eat()
     {
-        // play the video
+        echo "Eat";
     }
 }
 
-class AviVideoPlayer extends VideoPlayer
+class Bird extends Animal
 {
-    public function play($file)
+    public function fly()
     {
-        if (pathinfo($file, PATHINFO_EXTENSION) !== 'avi') {
-            /*
-                Violates LSP because:
-                  - preconditions for the subclass can't be greater
-                  - we can no longer substitute this behaviour anywhere else because the output could be different
-             */
-            throw new Exception;
-        }
+        echo "Fly";
     }
 }
+
+class Eagle extends Bird
+{
+    public function fly()
+    {
+        echo "Eagle Fly";
+    }
+}
+
+class Duck  extends Bird
+{
+    public function fly()
+    {
+        echo "Duck  Fly";
+    }
+}
+
+class Penguin extends Bird
+{
+    public function fly()
+    {
+        throw new Exception;
+    }
+}
+
+$eagle = new Eagle();
+$duck = new Duck();
+$penguin = new Penguin();
+
+$birds = [$eagle, $duck, $penguin];
+
+foreach ($birds as $key => $bird) {
+  $bird->fly();
+}
+
 ```
-If AviVideoPlayer have not avi extension, the code will throw exception.
+When calling fly function of Penguin class will throw Exception. Penguin class causes a error, failing to substitute its parent Bird class , so it violated LSP.
 
 ### Solution
 
-1. AviVideoPlayer should not substitutable for VideoPlayer so AviVideoPlayer should not extend from VideoPlayer.
+1. Penguin should not substitutable for Bird so Penguin should not extend from Bird.
 
 ```php
-class AviVideoPlayer
+class Penguin extends Animal
 {
-    public function playAviVideo($file)
-    {
-        if (pathinfo($file, PATHINFO_EXTENSION) !== 'avi') {
-            throw new Exception;
-        }
-    }
+    
 }
 ```
