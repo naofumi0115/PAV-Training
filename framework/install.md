@@ -15,5 +15,22 @@ CodeIgniter is installed in your PC, let access the URL http://localhost/firstpp
 ![ci](./images/ci_installed.png)
 
 
-You have learned how to Install CI, go to next step: [Build index page](./ci_index.md)
+## Prepare for next steps
 
+In order to prepare for next step, please so below steps:
+
+- Download the resource at https://drive.google.com/file/d/1apph2qFOIqXQ6LeT80JbSgejGEzcgfd7/view
+- Unzip downloaded file, you will get a folder named `assets`, move `assets` to `firstapp/assets`
+
+![assets dir](./images/structure_asset.png)
+
+Before continue, let create a repository on Github named `firstapp`, and push your source code to the repository
+
+```bash
+$ git init
+$ git add -A
+$ git commit -m "init framework"
+$ git remote add origin git@github.com:your_account_name/firstapp.git
+```
+
+Now, go to next step: [Build index page](./ci_index.md)
