@@ -11,7 +11,7 @@ Before start using Code Igniter (CI), let take a look on `Model-View-Controller`
 - [Model-View-Controller](https://codeigniter.com/user_guide/overview/mvc.html)
 - [Application Flow Chart](https://codeigniter.com/user_guide/overview/appflow.html)
 
-CI included many features, 
+There are many features in CodeIgniter, we will learn them step by step in Exercise.
 
 ## Exercise
 
