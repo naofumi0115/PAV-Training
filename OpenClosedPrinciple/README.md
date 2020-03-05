@@ -8,7 +8,10 @@ Software entities (classes, modules, functions, etc.) be extendable without actu
 
 ### Problem
 
-Please look bad design at the following code. 
+Users want to sell the land with the specific cost. In order to sell land, users need to calculate the area.
+So, we have formula: cost per unit * area.
+
+Please look bad design at the following code. We calculate the area of Rectangle and Circle.
 
 ```php
 class Rectangle
@@ -50,8 +53,9 @@ $rect = new Rectangle(8,5);
 $obj = new CostManager();
 echo $obj->calculate($circle);
 ```
-If we want to calculate the area for Square we have to modify calculate method in CostManager class. It breaks the open-closed principle. 
-
+The problem is that user want to calculate the area for Square
+With the above code, We have to add Square class and modify calculate method in CostManager class. It breaks the open-closed principle.
+Please look add calculate Square at the following code:
 ```php
 class Rectangle
 {
@@ -73,7 +77,7 @@ class Circle
     }
 }
 
-class Square implements AreaInterface
+class Square
 {
     public  $a;
     public function __construct($a)
