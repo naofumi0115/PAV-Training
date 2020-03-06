@@ -73,7 +73,7 @@ In addition, this table data can be read, inserted, deleted or edited by the CRU
 
 2. Open [phpmyadmin](http://localhost/phpmyadmin/)
 
-!()[./phpmyadmin.png]
+![](./phpmyadmin.png)
 
 3. Create sql_test database
 
@@ -84,15 +84,15 @@ CREATE DATABASE IF NOT EXISTS sql_test;
 ```
 - Step by step:
 
-!()[./create_test_db.png]
+![](./create_test_db.png)
 
 4. Select sql_test database
 
-!()[./select_test_db.png]
+![](./select_test_db.png)
 
 5. Table structure for table `agents`
 
-!()[./agents.png]
+![](./agents.png)
 
 - SQL Code:
 ```sql
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `agents` (
 ```
 - Step by step:
 
-!()[./create_agents_table.png]
+![](./create_agents_table.png)
 
 6. Insert dummy data for table `agents`
 - SQL Code:
@@ -291,7 +291,7 @@ WHERE
 ```
 
 - Output:
-!()[./e1_output.png]
+![](./e1_output.png)
 
 You can combine the above three queries by placing one query inside the other. See the following code and query result :
 
