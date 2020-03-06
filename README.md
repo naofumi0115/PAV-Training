@@ -78,13 +78,22 @@ Following solution assumes that all elements are distinct.
 
 #### For example:
 
+- Example 1: 
+
 Input: {5, 6, 1, 2, 3, 4}
+
 Output: 1
+
+- Example 2: 
 
 Input: {1, 2, 3, 4}
+
 Output: 1
 
+- Example 3:
+
 Input: {2, 1}
+
 Output: 1
 
 #### Solution
@@ -219,18 +228,32 @@ echo "The minimum element is " .
 ### Home work 1
 
 #### Question:
+
 Given an array that is sorted and then rotated around an unknown point. Find if the array has a pair with a given sum ‘x’. It may be assumed that all elements in the array are distinct.
 
 #### For example:
 
+- Example 1:
+
 Input: arr[] = {11, 15, 6, 8, 9, 10}, x = 16
+
 Output: true
+
 There is a pair (6, 10) with sum 16
 
+
+- Example 2:
+
 Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 35
+
 Output: true
+
 There is a pair (26, 9) with sum 35
 
+- Example 3:
+
 Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 45
+
 Output: false
+
 There is no pair with sum 45.
