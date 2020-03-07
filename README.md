@@ -255,10 +255,8 @@ FROM `agents`
 - Output:
 
 |MAX(commission)|
-
-|---------------|
-
-|0.15           |
+|---|
+|0.15|
 
 2. Get all agents have same maximum commission
 
@@ -275,16 +273,11 @@ WHERE
 - Output:
 
 |AGENT_CODE|
-
-|----------|
-
-|A004      |
-
-|A006      |
-
-|A007      |
-
-|A011      |
+|---|
+|A004|
+|A006|
+|A007|
+|A011|
 
 3. Get all orders of the agents
 
