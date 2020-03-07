@@ -242,17 +242,22 @@ Write a query to extract the data from the orders table for those agents who ear
 3. Get all orders of the agents
 
 Based on the ablove step-by-step, we will have 3 subselect:
+
 1. Get maximum commission
 
 - SQL Code:
+
 ```sql
 SELECT MAX(commission) 
 FROM `agents`
 ```
 
 - Output:
+
 |MAX(commission)|
+
 |---------------|
+
 |0.15           |
 
 2. Get all agents have same maximum commission
@@ -268,11 +273,17 @@ WHERE
 ```
 
 - Output:
+
 |AGENT_CODE|
+
 |----------|
+
 |A004      |
+
 |A006      |
+
 |A007      |
+
 |A011      |
 
 3. Get all orders of the agents
@@ -291,6 +302,7 @@ WHERE
 ```
 
 - Output:
+
 !()[./e1_output.png]
 
 You can combine the above three queries by placing one query inside the other. See the following code and query result :
@@ -319,4 +331,91 @@ WHERE
 ));
 ```
 
+## Exercise 2
+
+### Problem 
+
+Write a update query to modified value for 'commission' is 'commission'+.02 for agents who have greater than or equal to two 'customer'.
+
+### Solution
+
+1. Find count of customer each agents
+
+- SQL Code:
+
+```sql
+SELECT
+  `customer`.`AGENT_CODE`,
+  COUNT(`customer`.`AGENT_CODE`) AS count_customer
+FROM
+  `customer`
+GROUP BY
+  `customer`.`AGENT_CODE`
+```
+
+- Output:
+
+!()[./ex2_output.png]
+
+On the above sql, We use **GROUP BY** to group agents by **AGENT_CODE**
+
+2. Get agents who have greater than or equal to two 'customer'
+
+- SQL Code:
+
+```sql
+SELECT
+ `agents`.`AGENT_CODE`
+FROM
+ `agents`
+WHERE
+  (SELECT COUNT(`customer`.`AGENT_CODE`)
+FROM
+  `customer`
+WHERE `customer`.`AGENT_CODE` = `agents`.`AGENT_CODE`) >= 2 
+```
+
+- Output:
+
+!()[./ex2_output_1.png]
+
+When using subqueries, we can use **WHERE** clause instead of **GROUP BY**.
+
+3. Update 'commission' is 'commission'+.02
+
+- SQL Code:
+
+```sql
+UPDATE 
+  `agents`
+SET COMMISSION=COMMISSION+.02
+WHERE
+  AGENT_CODE IN('A002', 'A003', 'A004', 'A005', 'A006', 'A007', 'A008', 'A010')
+```
+
+How can we combine point 2 and 3? We only change select subqueries to update subqueries.
+
+- SQL Code:
+
+```sql
+UPDATE 
+  `agents`
+SET COMMISSION=COMMISSION+.02
+WHERE
+  (SELECT COUNT(`customer`.`AGENT_CODE`)
+FROM
+  `customer`
+WHERE `customer`.`AGENT_CODE` = `agents`.`AGENT_CODE`) >= 2 
+```
+
 ## Home work
+
+1. (**Easy**) Create a new table like as agents table named 'new_agents'. 
+Insert records into 'new_agents' table from 'agents' table with the following condition:
+- 'WORKING_AREA' of 'agents' table must be 'London'
+- 'CUST_COUNTRY' of 'customer' table must be 'UK'
+
+2. (**Normal**) Write a update query to modified value for 'commission' is 'commission'-.02 for agents who have minimum payment amount of 'customer' table.
+
+2. (**Hard**) Write a query to extract the data from the 'customer' table who are in grade 3 and not belongs to the country India and there deposited opening amount is less than 7000 and their agents should have earned a commission is less than .12%.
+
