@@ -41,12 +41,13 @@ There are some keyword in these guide you may facing.
 4. [Web performance]()
 
 ## Tools / Others
-1. Git.
-2. Understand some of basic commands on linux:
-3. Others
+1. [Git](./docs/tools/readme.md#11-what-is-git).
+2. [Understand some of basic commands on linux](./docs/tools/readme.md#2-basic-linux-commands)
+3. [Others](docs/tools/readme.md#3-others)
 
-# [Exercise](./exercises/readme.md)
+# [Exercise - Homeworks](./exercises/readme.md)
 1. [Build a web page layout](./exercises/tut1.md)
 2. [Setup web server and apply cookie - session](./exercises/tut2.md)
 3. [Web storage homeworks](./exercises/tut3.md)
+4. [Using tools](./exercises/tut4.md)
 
