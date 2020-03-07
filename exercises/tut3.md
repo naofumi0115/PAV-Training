@@ -1,5 +1,9 @@
 > Because this is just another way to store data at the client, just study how to use its API, so there is no exercise here. Just homeworks only.
 
+# Problem
+ - You want to keep your letter while writing even you did not click the send button
+# Solution
+
 # Homeworks
 1. Create a tool that remove the duplication of each line.
 Example:

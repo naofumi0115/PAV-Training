@@ -34,8 +34,9 @@ In Web model, `Cookie` was saved at you browser (at the Client). `Session` was s
 
 To get more understand about Cookie, Session, check below items:
 
-1. [Cookie](https://www.w3schools.com/js/js_cookies.asp)
-2. [Session](https://www.w3schools.com/php/php_sessions.asp)
+1. [Javascript Cookie](https://www.w3schools.com/js/js_cookies.asp)
+2. [PHP Cookie](https://www.w3schools.com/php/php_cookies.asp)
+3. [PHP Session](https://www.w3schools.com/php/php_sessions.asp)
 
 > Note: Each Programing languague (Java, C#, PHP,...) have its way to create and storage the session.
 >

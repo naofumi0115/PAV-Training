@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-ini_set("session.gc_maxlifetime", 60);
+// ini_set("session.gc_maxlifetime", 60);
 
 
 // Include router class
@@ -13,13 +13,15 @@ require 'src/helpers/router.php';
 require 'src/common/functions.php';
 
 // the time to that the session will live (second), after this time the session will be destroy
-session_cache_expire(1);
+// session_cache_expire(1);
 session_start();
 
-if (!isset($_SESSION) || !isset($_SESSION['LOGGED_IN'])) {
-    header('Location: /');
-}
+$parsed_url = parse_url($_SERVER['REQUEST_URI']);
 
+if (!isset($_SESSION['LOGGED_IN']) && $parsed_url['path'] != '/' && $parsed_url['path'] != '/login') {
+    header('Location: /');
+    die();
+}
 
 
 // Add base route (startpage)
@@ -43,8 +45,6 @@ Route::add('/test.html',function(){
 // Post route example
 // After login, I redirect it to home page again.
 Route::add('/login', function() {
-    // $isLoggedIn = false;
-
     if ( !empty( $_POST ) ) {
         $username = $_POST['username'];
         $pass = $_POST['password'];
@@ -71,7 +71,11 @@ Route::add('/logout', function() {
     die();
 }, 'get');
 
+
 Route::run('/');
+
+
+
 
 ////////////////////////////////////////////////
 //////

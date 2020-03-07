@@ -6,15 +6,19 @@
 - You want only the guys who does not have the username/pass can only view the home page
 
 # Solution and guide
+- As you know, the session was store at the server side. So to know how session works, we have to build a server. Use sever to store the session.
+- Apply cookie, session to `login action`
+
+# How to
 ## Precondition
 1. You have to finish previous section [1. HTML, CSS and JavaScript](./../docs/html-cs-js/readme.md). Because in this exercise, you have to reuse that layout.
 2. Change `Remember username` to `Remember me`
 
-> Please try by yourself first before you reference the source code.
+> Please `TRY BY YOURSELF FIRST` before you reference the source code.
 > Reference previouse exercise results [here](../src/html-css-js/exercises-2)
 
+
 ## Build web server.
-As you know, the session was store at the server side. So to know how session works, we have to build a server.
 
 In this case, I'm using PHP server to because you are studing PHP too.
 
@@ -23,6 +27,7 @@ To easier for setting up, you can install [XAMPP](https://www.apachefriends.org/
 
 > You can find another `combo` like [AMPP](http://ampps.com/downloads), [MAMP](https://www.mamp.info/en/downloads/), LAMP, etc
 
+> In this training, we will not go dive into `Apache`.  I you want to understand more about Apache [here](https://www.hostinger.com/tutorials/what-is-apache).
 ### Build a login page and use the session to keep the login information.
 
 1. Create a directory to host our web application.
@@ -74,7 +79,7 @@ vi Application/MAMP/conf/apache/httpd.conf
 # Virtual hosts
 Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf
 
-# Change from Listen 8888 to 80
+# Change from Listen 8888 to 80, it current port is 8888
 Listen 80
 ```
 
@@ -110,7 +115,7 @@ Your previouse web page was now render from server (server render)
 >
 >
 ```php
-pav-training
+pav-training // root folder
 --- src
 ------ /home
          | index.php  // renamed index.html -> index.php
@@ -124,7 +129,7 @@ pav-training
          | index.php // contain the layout and content of trainers
 ------ /helpers
          | route.php
------- /common
+------ /common // you may be need to use when you refactor the code, this exercise, it's not use.
 --- index.php
 ```
 
@@ -156,6 +161,16 @@ As above image, if you want to check whether the user logged in or not to allow 
 
 And by default, Apache let you access to the right page with the right directory structure http://pav-training.local`/src/users/index.php`.
 
+> **Notice that:**
+>
+> If the there is not specific file (like `index.php` or `home.php`, etc), default `index`.php will be use.
+>
+> **Example**: both urls are the same
+>
+> http://pav-training.local/src/users/index.php
+>
+> http://pav-training.local/src/users
+
 This is not good because the user know how you struct you file and your directory.
 
 To solve this problem, we create a route class, and each request from users will go to this Route engine first before forward to other pages.
@@ -163,7 +178,11 @@ To solve this problem, we create a route class, and each request from users will
 ![have route](images/tut2-route.png)
 
 3.1 Create the route engine.
-This class allow you add the sub uri need to be routed.
+This class allow you add the sub uri need to be routed to an array, after that, it will be used to check each request URL from client and forward to the correct page.
+
+> This time, you just need to understand what this `route.php` do? and how it solve above problem is okay.
+>
+> If you want to undertand more and deeply about the code inside, `you have to do that by yourself`
 ```php
 // src/helpers/route.php
 <?php
@@ -264,12 +283,11 @@ class Route {
         }
       }
     }
-
   }
 
 ```
 
-Then, setting you application route path
+Then, setting you application route path in `index.php` at the root folder
 
 ```php
 // index.php (at root folder)
@@ -284,8 +302,9 @@ Route::add('/users', function() { include 'src/users/index.php'; });
 // start the route.
 Route::run('/');
 ```
-But by default, Apache will navigate the user request mapping to project folder.
-example.
+But by default, Apache will navigate the user's request mapping to project folder.
+
+Example.
 
 | No | Request url                   | Directory is mapping          |
 | - | ------------                  | -----------------             |
@@ -294,9 +313,9 @@ example.
 | 3 | pav-training.local/users      |     => /users/index.php     |
 | 4 | pav-training.local/users/add  |     => /users/add/index.php     |
 
-So, you Route config will not work perfectly. It just run into you route configuration if user enter the url like No.1
+So, you Route config will not work perfectly. It just run into you route configuration if user enter the url like `No.1`
 
-To fix this issue, I have config to let Apache always forward the request from user to the index.php in root directory.
+To fix this issue, I have a configuration to let Apache always forward the request from user to the index.php in root directory.
 
 To do so, create `.htaccess` file at the root directory and put below content:
 ```conf
@@ -321,7 +340,9 @@ RewriteRule ^(.*)$ index.php [QSA]
 
 Don't know what is [.htaccess? Check here](http://www.htaccess-guide.com/) or [here](https://stackoverflow.com/questions/13170819/what-is-htaccess-file)
 
-3.2 Implement login
+Gotcha, every request from users will be redirected to `index.php`
+
+3.2 Implement login action
 
 To check if the user is not log in yet, then does not allow user view other pages.Before forward to any page, place you check logic a and redirect to the home page if they are not logged in.
 
@@ -377,7 +398,8 @@ session_start();
 
 $parsed_url = parse_url($_SERVER['REQUEST_URI']);
 
-if (!isset($_SESSION['LOGGED_IN']) && $parsed_url['path'] != '/') {
+if (!isset($_SESSION['LOGGED_IN']) && $parsed_url['path'] != '/' && $parsed_url['path'] != '/login') {
+    // Redirect to home page
     header("Location: /");
     die();
 }
@@ -390,20 +412,26 @@ Route::add('/', function() { include 'src/home/index.php'; });
 ```
 
 4. Using cookie
+
 In login form, you have a checkbox `Remember me`, right? So now, if the user check in that checkbox, we will save that information (username) in 5 days.
 
 After add the value to session, check if the checkbox was checked, set the cookie for it.
 
 ```php
-if ( isset($username) && isset($pass) ) {
-    if ( isUserValid($username, $pass)) {
-        $_SESSION['LOGGED_IN'] = $username;
-        $_SESSION['USERNAME'] = $_POST['username'];
-    }
+// index.php
+Route:add('/login', function() {
+  ...
 
-    if (isset($_POST['rememberUsername'])) {
-        setcookie('username', $username, time() + (24 * 60 * 60 * 5), "/"); // 5 days
-    }
+  if ( isset($username) && isset($pass) ) {
+      if ( isUserValid($username, $pass)) {
+          $_SESSION['LOGGED_IN'] = $username;
+          $_SESSION['USERNAME'] = $_POST['username'];
+      }
+
+      if (isset($_POST['rememberUsername'])) {
+          setcookie('username', $username, time() + (24 * 60 * 60 * 5), "/"); // 5 days
+      }
+  }
 }
 
 ```
@@ -419,6 +447,7 @@ On browser, `right-click` -> `Inspect`, then select tab `Application`
 - [Php Session](https://www.w3schools.com/php/php_sessions.asp)
 - [PHP Cookie](https://www.w3schools.com/php/php_cookies.asp)
 - [PHP die](https://www.w3schools.com/php/func_misc_die.asp)
+- [HTTP method](https://www.restapitutorial.com/lessons/httpmethods.html)
 
 
 # Homeworks
@@ -431,12 +460,14 @@ The main content go here
 You are not logged in!!! please login to view more info
 ```
 
-2. (Easy) If the user logged in, Show `Hi: username` otherwise, show `Hi: Guest` in the loggin bar.
-3. (Easy) Set the session timeout for the server side (2 hours). It means after 30 minutes, the user must login again.
-4. (Hard) In case user check on `Remember me` and login is correct, save that session in 3 days. It means i can access to the web page during 3 days without needs to login again. After 3 days, I have to login again.
+2. (Easy: 10 min) If the user logged in, Show `Hi: username` otherwise, show `Hi: Guest` in the loggin bar.
+3. (Easy: 1 hours) Set the session timeout for the server side. It means after 30 minutes, the user must login again.
+4. (Easy: 15 min) In case the user have already checked the checkbox `Remember me`, If you click on login again, fill their username to the textbox `username`
+5. (Easy: 30 min) Implement the logout function.
+6. (Medium) Refactor to the user can view the header, footer and sidebar like the `home` page when transit other remain pages (users, courses, trainers).
+7. (Hard) In case user check on `Remember me` and login is correct, make the user no needs to login again during 3 days. It means i can access to the web page during 3 days without needs to login again. After 3 days, I have to login again.
 
 > Note that: Do not increase the session timeout.
 
-5. (Medium) Refactor to the user can view the header, footer and sidebar like the `home` page when transit other remain pages.
-6. (Easy) Implement the logout function.
+
 
