@@ -27,7 +27,7 @@ You can use a subquery in a SELECT, INSERT, DELETE, or UPDATE statement to perfo
 
 ### Syntax :
 
-!()[./subquery-syntax.png]
+![](./subquery-syntax.png)
 
 - The subquery (inner query) executes once before the main query (outer query) executes.
 - The main query (outer query) use the subquery result.
@@ -36,8 +36,8 @@ You can use a subquery in a SELECT, INSERT, DELETE, or UPDATE statement to perfo
 
 #### Problem
 In this section, you will learn the requirements of using subqueries. We have the following two tables 'student' and 'marks' with common field 'StudentID'.
-!()[./student.png]
-!()[./marks.png]
+![](./student.png)
+![](./marks.png)
 
 Now we want to write a query to identify all students who get better marks than that of the student who's StudentID is 'V002', but we do not know the marks of 'V002'.
 
