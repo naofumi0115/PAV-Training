@@ -58,9 +58,13 @@ WHERE
 ```
 
 Query result:
+
 +------------+----------------------+
+
 | StudentID  | Total_marks          | 
+
 +------------+----------------------+
+
 | V002       | 80                   | 
 
 The result of the query is 80.
@@ -82,10 +86,15 @@ WHERE
 ```
 
 Query result:
+
 +------------+----------------------+----------------------+
+
 | StudentID  | Name                 | Total_marks          | 
+
 +------------+----------------------+----------------------+
+
 | V001       | Abe                  | 95                   |
+
 | V004       | Adelphos             | 81                   |
 
 Above two queries identified students who get the better number than the student who's StudentID is 'V002' (Abhay).
