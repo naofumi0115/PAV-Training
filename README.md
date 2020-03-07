@@ -355,7 +355,7 @@ GROUP BY
 
 - Output:
 
-!()[./ex2_output.png]
+![](./ex2_output.png)
 
 On the above sql, We use **GROUP BY** to group agents by **AGENT_CODE**
 
@@ -377,7 +377,7 @@ WHERE `customer`.`AGENT_CODE` = `agents`.`AGENT_CODE`) >= 2
 
 - Output:
 
-!()[./ex2_output_1.png]
+![](./ex2_output_1.png)
 
 When using subqueries, we can use **WHERE** clause instead of **GROUP BY**.
 
