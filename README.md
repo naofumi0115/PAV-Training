@@ -21,7 +21,7 @@ If your concept is not clear about interface then you can read this [doc](https:
 
 There are 2 parts in each lession: introduction SOLID Principles and Home work.
 In introduction, I'm going to try to explain SOLID Principles in simplest way so that it's easy 
-for beginners to understand. 
+for beginners to understand. In each part of SOLID, I added exercises to explain the principle so you should read carefully.
 
 1. SOLID Principles
 - [Single Responsibility Principle](./SingleResponsiblityPrinciple/README.md)
