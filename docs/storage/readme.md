@@ -17,7 +17,7 @@ Check [here](https://www.w3schools.com/html/html5_webstorage.asp) to get detail
 - Want to store more data that the cookie can not.
 - Want to save data until you (your code logic) or user delete it.
 - Want you data data does not automatically send along with http request
--
+
 
 ## When NOT to use:
 - Want to save the sensitive information
