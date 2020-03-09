@@ -24,13 +24,14 @@ In order to prepare for next step, please so below steps:
 
 ![assets dir](./images/structure_asset.png)
 
-Before continue, let create a repository on Github named `firstapp`, and push your source code to the repository
+Before continue, let create a repository on Github named `firstapp`, and push your source code to the repository by excute each below commands. Remember to repalace `your_account_name` by **Your Github Account Name**
 
 ```bash
 $ git init
 $ git add -A
 $ git commit -m "init framework"
 $ git remote add origin git@github.com:your_account_name/firstapp.git
+$ git push -u origin master
 ```
 
 Now, go to next step: [Build index page](./ci_index.md)
