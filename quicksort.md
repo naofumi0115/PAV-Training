@@ -27,7 +27,7 @@ quickSort(arr[], low, high)
     }
 }
 ```
-()[./img/QuickSort2.png]
+![](./img/QuickSort2.png)
 
 ### The Quicksort function
 ```php
