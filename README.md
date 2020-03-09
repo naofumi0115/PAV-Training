@@ -28,11 +28,15 @@ Given an array and a number k where k is smaller than size of array, we need to 
 
 #### For example:
 **Input**: arr[] = {7, 10, 4, 3, 20, 15}
+
 k = 3
+
 **Output**: 7
 
 **Input**: arr[] = {7, 10, 4, 3, 20, 15}
+
 k = 4
+
 **Output**: 10
 
 #### Solution
@@ -225,35 +229,45 @@ echo "The minimum element is " .
 
 - The first 3 pairs are returned from the sequence [1, 2], [1, 4], [1, 6], [7, 2], [7, 4], [11, 2], [7, 6], [11, 4], [11, 6]
 
-### Home work 1
+### Home work 2
 
 #### Question:
 
-Given an array that is sorted and then rotated around an unknown point. Find if the array has a pair with a given sum ‘x’. It may be assumed that all elements in the array are distinct.
+Given an array that is sorted and then rotated around an unknown point. 
+Find if the array has a pair with a given sum ‘x’. It may be assumed that all elements in the array are distinct.
 
 #### For example:
 
 - Example 1:
 
-Input: arr[] = {11, 15, 6, 8, 9, 10}, x = 16
+```
+Input: arr[] = {11, 15, 6, 8, 9, 10}, 
+x = 16
 
 Output: true
 
-There is a pair (6, 10) with sum 16
+There is a pair (6, 10) with sum 16v
+```
 
 
 - Example 2:
 
-Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 35
+```
+Input: arr[] = {11, 15, 26, 38, 9, 10}, 
+x = 35
 
 Output: true
 
 There is a pair (26, 9) with sum 35
+```
 
 - Example 3:
 
-Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 45
+```
+Input: arr[] = {11, 15, 26, 38, 9, 10}, 
+x = 45
 
 Output: false
 
 There is no pair with sum 45.
+```
