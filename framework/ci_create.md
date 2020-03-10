@@ -1,6 +1,7 @@
 # Create an User
 
-**Define**
+**Definition**
+
 `Base url` is a root url to access website home page. 
 
 You now know how you can read data from a database using CodeIgniter, but you haven’t written any information to the database yet. In this section you’ll expand your user controller and model created earlier to include this functionality.
@@ -145,6 +146,8 @@ by
 Now, access url http://localhost/firstapp/, click on `Create An User`, you will be navigated to `http://localhost/firstapp/index.php/users/create`
 
 ![](./images/ci_create.png)
+
+**Important**
 
 When the call is made to `http://localhost/firstapp/index.php/users/create`, the [Routing](https://codeigniter.com/user_guide/general/routing.html) calls to method `create` of User controller.
 

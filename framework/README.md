@@ -31,7 +31,7 @@ Now, let start:
 
 1. [Install framework](./install.md)
 2. [Build index page](./ci_index.md)
-3. Create an User
-4. Updat an User.
+3. [Create an User](./ci_create.md)
+4. [Updat an User](./ci_update.md)
 5. Delete an User.
 
