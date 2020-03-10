@@ -120,6 +120,14 @@ After modified the URL for button Edit, go to http://localhost/firstapp/ and cli
 
 Try to change User data like: First Name, Last Name and press button `Update`, and you will see that the User will be updated.
 
+Latest, push your souce code on Github
+
+```bash
+$ git add -A
+$ git commit -m "update user"
+$ git push origin curd
+```
+
 ## Conclusion
 
 The knowledge in this chapter is almost same with previous chapter (Create an User), but you can learn using Query Builder to update data 
