@@ -2,10 +2,27 @@
 
 Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.
 
-## Flowchart of the Insertion Sort:
+## Pseudocode
+
+Insertion Sort works by maintaining a sorted sub-list, extracting the master list's items one by one and inserting them into a the sub-list until all items are moved from master list to the sub-list.
+
+### Flowchart of the Insertion Sort:
 
 ![](./img/insertionsort.png)
 
+### Pseudocode of Insertion Sort algorithm can be written as follows:
+
+```php
+FOR each element of the master list
+ 
+    Extract the current item
+ 
+        Locate the position to insert by comparing with items from sub-list
+ 
+        Insert the item to the position
+ 
+END FOR
+```
 ## Following is the implementations of the Insertion Sort:
 ```php
 <?php  
@@ -62,5 +79,3 @@ Sorted array:
 
 - Time Complexity: O(n*2)
 - Auxiliary Space: O(1)
-- Sorting In Place: Yes
-- Stable : The default implementation is not stable. 

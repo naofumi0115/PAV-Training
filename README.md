@@ -15,6 +15,8 @@ A Sorting Algorithm is used to rearrange a given array or list elements accordin
 
 Searching Algorithms are designed to check for an element or retrieve an element from any data structure where it is stored. Based on the type of search operation, these algorithms are generally classified into two categories:
 
+### Searching Algorithms Index
+
 1. Sequential Search: In this, the list or array is traversed sequentially and every element is checked. For example: [Sequential Search](./sequentialsearch.md).
 2. Interval Search: These algorithms are specifically designed for searching in sorted data-structures. These type of searching algorithms are much more efficient than Linear Search as they repeatedly target the center of the search structure and divide the search space in half. For Example: [Binary Search](./binarysearch.md).
 
@@ -27,6 +29,7 @@ Searching Algorithms are designed to check for an element or retrieve an element
 Given an array and a number k where k is smaller than size of array, we need to find the k’th smallest element in the given array. It is given that ll array elements are distinct.
 
 #### For example:
+
 **Input**: arr[] = {7, 10, 4, 3, 20, 15}
 
 k = 3
@@ -204,13 +207,42 @@ echo "The minimum element is " .
 
 ## Home work
 
-### Home work 1
+
+### Home work 1 (Easy)
 
 #### Question:
 
-- Given two integer arrays arr1[] and arr2[] unsorted and an integer k. 
+We have a integer unsorted array and number m. Each integer of array is in the range from 0 to m-1
+
+Find the smallest number that is missing from the array.
+
+#### For example:
+```
+Input: {0, 2, 1, 9, 7}, n = 5, m = 10
+
+Output: 3
+```
+
+```
+Input: {4, 11, 13, 6}, n = 4, m = 12
+
+Output: 0
+```
+
+```
+Input: {5, 1, 6, 3, 7, 0, 2, 4, 10}, m = 11
+
+Output: 8
+```
+
+### Home work 2 (Normal)
+
+#### Question:
+
+- We have 2 integer arrays arr1[] and arr2[] unsorted and an integer k. 
 
 - Find k pairs with smallest sums such that one element of a pair belongs to arr1[] and other element belongs to arr2[]
+
 - Time Complexity : O(nlogn)
 
 #### For example:
@@ -229,12 +261,15 @@ echo "The minimum element is " .
 
 - The first 3 pairs are returned from the sequence [1, 2], [1, 4], [1, 6], [7, 2], [7, 4], [11, 2], [7, 6], [11, 4], [11, 6]
 
-### Home work 2
+### Home work 3 (Hard)
 
 #### Question:
 
-Given an array that is sorted and then rotated around an unknown point. 
-Find if the array has a pair with a given sum ‘x’. It may be assumed that all elements in the array are distinct.
+- We have an array that is sorted and then rotated around an unknown point.
+
+- For exmaple: sorted array{ 6, 8, 9, 10, 11, 15,} rotated -> {11, 15, 6, 8, 9, 10}
+
+- Find if the array has a pair with a given sum ‘x’. It may be assumed that all elements in the array are distinct.
 
 #### For example:
 

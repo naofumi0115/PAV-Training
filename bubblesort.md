@@ -2,9 +2,17 @@
 
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
 
-## Step-by-step example:
+## Problem to Solve
 
-Take an array of numbers " 5 1 4 2 8", and sort the array from lowest number to greatest number using bubble sort. In each step, elements written in bold are being compared. Three passes will be required;
+Given a list of numbers as shown below, please sort them in ascending order.
+```php
+$numbers = [5 1 4 2 8];
+```
+
+## Pseudocode
+
+Bubble Sort works by comparing two values at a time and does it pair by pair. And it iterates until all elements are in place. 
+After each iteration, at least one element is moved to the end of the list. Below is an illustration of Bubble Sort.
 
 1. First Pass:
 
@@ -38,7 +46,28 @@ Now, the array is already sorted, but our algorithm does not know if it is compl
 
 ( 1 2 4 **5 8** ) –> ( 1 2 4 **5 8** )
 
-## Following is the implementations of Bubble Sort.
+### Pseudocode of Bubble Sort algorithm can be written as follows:
+
+```php
+FOR each element of the list
+ 
+    FOR each element of the list
+ 
+        IF current element greater then next element
+ 
+            swap the elements
+ 
+        END IF
+ 
+    END FOR
+ 
+END FOR
+
+```
+
+## Implementation
+
+### Following is the implementations of Bubble Sort.
 
 ```php
 <?php  
@@ -82,18 +111,18 @@ for ($i = 0; $i < $len; $i++)
 ?> 
 ```
 
-## Output 
+### Output 
 
 ```php
 Sorted array:
 1 2 3 4 5 7 8 9
 ```
 
-## Illustration :
+### Illustration :
 
 ![](./img/bubble-sort1.png)
 
-## Optimized Implementation:
+### Optimized Implementation:
 
 The above function always runs O(n^2) time even if the array is sorted. It can be optimized by stopping the algorithm if inner loop didn’t cause any swap.
 
@@ -157,9 +186,3 @@ for($i = 0; $i < $len; $i++)
 - Best Case Time Complexity: O(n). Best case occurs when array is already sorted.
 
 - Auxiliary Space: O(1)
-
-- Boundary Cases: Bubble sort takes minimum time (Order of n) when elements are already sorted.
-
-- Sorting In Place: Yes
-
-- Stable: Yes
