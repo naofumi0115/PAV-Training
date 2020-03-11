@@ -66,6 +66,14 @@ If you can't understand `return confirm('Are you sure to delete this user?')`, l
 
 Now, open http://localhost/firstapp/ and click `Delete`, the user will be deleted from Users List.
 
+Before finishing lession, push your source code on Github.
+
+```bash
+$ git add -A
+$ git commit -m "update user"
+$ git push origin curd
+```
+
 ## Conclusion
 
 After this chapter, you have basic knowledge in CodeIgniter, you can get more detail at:
