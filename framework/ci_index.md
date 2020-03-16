@@ -1,5 +1,13 @@
 # Create Index Page
 
+![](./images/user_index.png)
+
+In this chapter, we'll folow below **main steps** to make a page to show Users list as above screen.
+- Create User Controller
+- Config Routing for home page
+- Create User Model
+- Create View to show Users list
+
 Before begin to implement pages, let create a new git branch:
 
 ```bash
@@ -29,6 +37,10 @@ class Users extends CI_Controller {
     }
 }
 ```
+
+You have created a class named Users, with a method `index`. The Users class is extending the `CI_Controller` class. This means that the user pages class can access the methods and variables defined in the `CI_Controller` class `system/core/Controller.php`.
+
+Every controller should be extended from `CI_Controller`. The controller is what will become the center of every request to your web application. In very technical CodeIgniter discussions, it may be referred to as the super object. Like any php class, you refer to it within your controllers as `$this`. Referring to `$this` is how you will load libraries, views, and generally command the framework.
 
 ### 1.2 Configuration routing
 
@@ -279,7 +291,7 @@ class Users_model extends CI_Model {
 }
 ```
 
-This code looks similar to the controller code that was used earlier. It creates a new model by extending CI_Model and loads the database library. This will make the database class available through the `$this->db` object.
+This code looks similar to the controller code that was used earlier. It creates a new model by extending `CI_Model` and loads the database library. This will make the database class available through the `$this->db` object.
 
 Now that the database and a model have been set up, you’ll need a method to get all of our users from our database. To do this, the database abstraction layer that is included with CodeIgniter — [Query Builder](https://codeigniter.com/user_guide/database/query_builder.html) — is used. This makes it possible to write your ‘queries’ once and make them work on all supported database systems. Add the following method to Users model.
 
@@ -323,6 +335,8 @@ class Users extends CI_Controller {
     }
 }
 ```
+
+Looking at the code, you may see some similarity with the files we created earlier. First, the `__construct()` method: it calls the constructor of its parent class (`CI_Controller`) and loads the model, so it can be used in all other methods in this controller.
 
 `$this->load->view('users/index', $data);` will assign users list to view by variable named `$users`, now open view `application/views/users/index.php`, and update source code to show users list
 

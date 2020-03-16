@@ -4,6 +4,15 @@
 
 `Base url` is a root url to access website home page. 
 
+-----
+
+![](./images/ci_create.png)
+
+In this chapter, we'll folow below **main steps** to make a page to create an User as above screen.
+- Create Form (view) for creating User
+- Update Controller
+- Update Model
+
 You now know how you can read data from a database using CodeIgniter, but you haven’t written any information to the database yet. In this section you’ll expand your user controller and model created earlier to include this functionality.
 
 Before start, make some config to update base url for the firstapp by open `application/config/config.php`
@@ -61,7 +70,7 @@ To input data into the database you need to create a form where you can input th
 
 There are only two things here that probably look unfamiliar to you: the `form_open()` function and the `validation_errors()` function.
 
-The first function is provided by the [form helper](https://codeigniter.com/user_guide/helpers/form_helper.html) and renders the form element and adds extra functionality, like adding a hidden [CSRF prevention](https://codeigniter.com/user_guide/libraries/security.html) field. The latter is used to report errors related to form validation.
+The first function is provided by the [form helper](https://codeigniter.com/user_guide/helpers/form_helper.html) and renders the form element and adds extra functionality, like adding a hidden [CSRF prevention](https://codeigniter.com/user_guide/libraries/security.html) field (CSRF is very important knowledge, but it's medium level. Now you can skip it and back to lean it later). The latter is used to report errors related to form validation.
 
 ### Update Model
 

@@ -1,5 +1,7 @@
 # Update an User
 
+![](./images/ci_update.png)
+
 In previous chapter, you learned how to Create an User, in this chapter, you will learn how to update an User.
 
 Updating an User is mostly same with creating an user, by flowing steps:
@@ -15,8 +17,6 @@ Open user model `application/models/Users_model.php` and add method `update` wit
 ```php
 public function update_user($user_id)
 {
-    $this->load->helper('url');
-
     $data = array(
         'first_name' => $this->input->post('first_name'),
         'last_name' => $this->input->post('last_name'),

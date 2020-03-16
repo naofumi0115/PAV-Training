@@ -1,12 +1,14 @@
 # Delete an User
 
-In this chapter, we will implement feature to delete an user.
+![](./images/user_index.png)
 
-![](./images/index_page.png)
+In this chapter, we will implement feature to delete an user by click on button delete. It's included main steps:
+
+- Add method delete to User Model
+- Add method delete to User Controller
+- Update button delete User
 
 Look at index page above, imagine that when you click on the button `Delete`, an message will be shown to confirm that you realy want to delete an user or not. If you click `OK`, user will be deleted, if click `Cancel`, do nothing.
-
-Same with create and update user, we need to implement Model and Controller for this feature.
 
 ## Add method delete to User Model
 

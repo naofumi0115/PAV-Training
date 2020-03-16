@@ -8,7 +8,7 @@ CodeIgniter is an `Model-View-Controller` (MVC) Framework - a toolkit - for peop
 
 Before start using Code Igniter (CI), let take a look on `Model-View-Controller` (MVC) concept and `Application Flow Chart`
 
-- [Model-View-Controller](https://codeigniter.com/user_guide/overview/mvc.html)
+- [Model-View-Controller](./mvc_model.md)
 - [Application Flow Chart](https://codeigniter.com/user_guide/overview/appflow.html)
 
 There are many features in CodeIgniter, we will learn them step by step in Exercise.
