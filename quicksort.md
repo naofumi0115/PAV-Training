@@ -146,5 +146,5 @@ printArray($arr, $n);
 ```
 ## Analysis
 
-- Time Complexity: O(n2) as there are two nested loops.
+- Time Complexity: O(nLogn) as there are two nested loops.
 - Auxiliary Space: O(1)
