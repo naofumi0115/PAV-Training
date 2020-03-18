@@ -437,4 +437,4 @@ having count(agent_name)<3
 group by working_area order by 2,3 desc;
 ```
 
-Based on sql best practice, Please fix the above sql code.
+The above sql have error. please fix the sql code based on sql best practice. 
