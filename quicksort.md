@@ -113,26 +113,20 @@ When the value to the left of the pivot is greater and the value to the right of
 ```php
 
 function partition(&$array, $left, $right) {
-    $pivotIndex = floor($left + ($right - $left) / 2);
-    $pivotValue = $array[$pivotIndex];
-    $i=$left;
-    $j=$right;
-    while ($i <= $j) {
-        while (($array[$i] < $pivotValue) ) {
+    $pivot = $array[$right];
+    $i = $left -1;
+    for ($j = $left; $j < $right; $j++) {
+          if(($array[$j] < $pivot)){
             $i++;
-        }
-        while (($array[$j] > $pivotValue)) {
-            $j--;
-        }
-        if ($i <= $j ) {
             $temp = $array[$i];
             $array[$i] = $array[$j];
             $array[$j] = $temp;
-            $i++;
-            $j--;
-        }
+          }
     }
-    return $i;
+    $temp = $array[$i + 1];
+    $array[$i + 1] = $array[$right];
+    $array[$right] = $temp;
+    return ($i + 1);
 }
 
 ```
