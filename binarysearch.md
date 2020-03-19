@@ -48,8 +48,8 @@ Element x is not present in arr[].
 // is present, otherwise -1 
 function binarySearch($arr, $l, $r, $x) 
 { 
-if ($r >= $l) 
-{ 
+	if ($r >= $l) 
+	{ 
         $mid = ceil($l + ($r - $l) / 2); 
   
         // If the element is present  
@@ -61,18 +61,16 @@ if ($r >= $l)
         // mid, then it can only be  
         // present in left subarray 
         if ($arr[$mid] > $x)  
-            return binarySearch($arr, $l,  
-                                $mid - 1, $x); 
+            return binarySearch($arr, $l, $mid - 1, $x); 
   
         // Else the element can only  
         // be present in right subarray 
-        return binarySearch($arr, $mid + 1,  
-                            $r, $x); 
-} 
+        return binarySearch($arr, $mid + 1, $r, $x); 
+	} 
   
-// We reach here when element  
-// is not present in array 
-return -1; 
+	// We reach here when element  
+	// is not present in array 
+	return -1; 
 } 
   
 // Driver Code 
@@ -81,10 +79,9 @@ $n = count($arr);
 $x = 10; 
 $result = binarySearch($arr, 0, $n - 1, $x); 
 if(($result == -1)) 
-echo "Element is not present in array"; 
+	echo "Element is not present in array"; 
 else
-echo "Element is present at index ", 
-                            $result; 
+	echo "Element is present at index ", $result; 
 ```
 
 2. Iterative implementation of Binary Search
@@ -98,8 +95,7 @@ echo "Element is present at index ",
 // function. It returns location  
 // of x in given array arr[l..r]  
 // if present, otherwise -1 
-function binarySearch($arr, $l,  
-                      $r, $x) 
+function binarySearch($arr, $l, $r, $x) 
 { 
     while ($l <= $r) 
     { 
@@ -132,10 +128,9 @@ $x = 10;
 $result = binarySearch($arr, 0,  
                        $n - 1, $x); 
 if(($result == -1)) 
-echo "Element is not present in array"; 
+	echo "Element is not present in array"; 
 else
-echo "Element is present at index ",  
-                            $result; 
+	echo "Element is present at index ", $result; 
   
 ?> 
 ```

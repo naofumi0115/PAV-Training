@@ -1,8 +1,19 @@
 # Algorithm
 
+## Analysis of Algorithms
+
+Algorithm analysis is an important part of computational complexity theory, which provides theoretical estimation for the required resources of an algorithm to solve a specific computational problem. Most algorithms are designed to work with inputs of arbitrary length. Analysis of algorithms is the determination of the amount of time and space resources required to execute it.
+
+Usually, the efficiency or running time of an algorithm is stated as a function relating the input length to the number of steps, known as **time complexity**, or volume of memory, known as **space complexity**.
+
+### Analysis of Algorithms Index
+- [A beginner's guide to Big O notation](https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/)
+- [Recursive](https://www.elated.com/php-recursive-functions/)
+
 ## Sorting Algorithms
 
-A Sorting Algorithm is used to rearrange a given array or list elements according to a comparison operator on the elements. The comparison operator is used to decide the new order of element in the respective data structure.
+A Sorting Algorithm is used to rearrange a given array or list elements according to a comparison operator on the elements. 
+The comparison operator is used to decide the new order of element in the respective data structure.
 
 ### Sorting Algorithms Index
 - [Bubble sort](./bubblesort.md)
@@ -17,8 +28,8 @@ Searching Algorithms are designed to check for an element or retrieve an element
 
 ### Searching Algorithms Index
 
-1. Sequential Search: In this, the list or array is traversed sequentially and every element is checked. For example: [Sequential Search](./sequentialsearch.md).
-2. Interval Search: These algorithms are specifically designed for searching in sorted data-structures. These type of searching algorithms are much more efficient than Linear Search as they repeatedly target the center of the search structure and divide the search space in half. For Example: [Binary Search](./binarysearch.md).
+- [Sequential Search](./sequentialsearch.md).
+- [Binary Search](./binarysearch.md).
 
 ## Exercise
 

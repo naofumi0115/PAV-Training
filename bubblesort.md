@@ -1,12 +1,12 @@
 # Bubble sort
 
-Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+Bubble sort is an algorithm that compares the adjacent elements and swaps their positions if they are not in the intended order. The order can be ascending or descending.
 
 ## Problem to Solve
 
 Given a list of numbers as shown below, please sort them in ascending order.
 ```php
-$numbers = [5 1 4 2 8];
+$numbers = [-2, 45, 0, 11, -9];
 ```
 
 ## Pseudocode
@@ -14,55 +14,27 @@ $numbers = [5 1 4 2 8];
 Bubble Sort works by comparing two values at a time and does it pair by pair. And it iterates until all elements are in place. 
 After each iteration, at least one element is moved to the end of the list. Below is an illustration of Bubble Sort.
 
-1. First Pass:
+### How Bubble Sort Works?
+1. Starting from the first index, compare the first and the second elements.If the first element is greater than the second element, they are swapped. Now, compare the second and the third elements. Swap them if they are not in order. The above process goes on until the last element.
 
-( **5 1** 4 2 8 ) –> ( **1 5** 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
+![](./img/Bubble-sort-0_1.png)
 
-( 1 **5 4** 2 8 ) –>  ( 1 **4 5** 2 8 ), Swap since 5 > 4
+2. The same process goes on for the remaining iterations. After each iteration, the largest element among the unsorted elements is placed at the end. In each iteration, the comparison takes place up to the last unsorted element. The array is sorted when all the unsorted elements are placed at their correct positions.
 
-( 1 4 **5 2** 8 ) –>  ( 1 4 **2 5** 8 ), Swap since 5 > 2
+![](./img/Bubble-sort-1_1.png)
 
-( 1 4 2 **5 8** ) –> ( 1 4 2 **5 8** ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+![](./img/Bubble-sort-2_1.png)
 
-2. Second Pass:
-
-( **1 4** 2 5 8 ) –> ( **1 4** 2 5 8 )
-
-( 1 **4 2** 5 8 ) –> ( 1 **2 4** 5 8 ), Swap since 4 > 2
-
-( 1 2 **4 5** 8 ) –> ( 1 2 **4 5** 8 )
-
-( 1 2 4 **5 8** ) –>  ( 1 2 4 **5 8** )
-
-Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.
-
-3. Third Pass:
-
-( **1 2** 4 5 8 ) –> ( **1 2** 4 5 8 )
-
-( 1 **2 4** 5 8 ) –> ( 1 **2 4** 5 8 )
-
-( 1 2 **4 5** 8 ) –> ( 1 2 **4 5** 8 )
-
-( 1 2 4 **5 8** ) –> ( 1 2 4 **5 8** )
+![](./img/Bubble-sort-3_1.png)
 
 ### Pseudocode of Bubble Sort algorithm can be written as follows:
 
 ```php
-FOR each element of the list
- 
-    FOR each element of the list
- 
-        IF current element greater then next element
- 
-            swap the elements
- 
-        END IF
- 
-    END FOR
- 
-END FOR
-
+bubbleSort(array)
+  for i <- 1 to indexOfLastUnsortedElement-1
+    if leftElement > rightElement
+      swap leftElement and rightElement
+end bubbleSort
 ```
 
 ## Implementation
@@ -118,13 +90,27 @@ Sorted array:
 1 2 3 4 5 7 8 9
 ```
 
-### Illustration :
 
-![](./img/bubble-sort1.png)
+## Optimized Implementation:
 
-### Optimized Implementation:
+In the above code, all possible comparisons are made even if the array is already sorted. It increases the execution time.
 
-The above function always runs O(n^2) time even if the array is sorted. It can be optimized by stopping the algorithm if inner loop didn’t cause any swap.
+The code can be optimized by introducing an extra variable **swapped**. After each iteration, if there is no swapping taking place then, there is no need for performing further loops.
+
+In such case, variable **swapped** is set false. Thus, we can prevent further iterations.
+
+### Pseudocode of Bubble Sort algorithm can be written as follows:
+
+```php
+bubbleSort(array)
+  swapped <- false
+  for i <- 1 to indexOfLastUnsortedElement-1
+    if leftElement > rightElement
+      swap leftElement and rightElement
+      swapped <- true
+end bubbleSort
+```
+
 
 ```php
 <?php  
@@ -181,8 +167,6 @@ for($i = 0; $i < $len; $i++)
 
 ## Analysis
 
-- Worst and Average Case Time Complexity: O(n^2). Worst case occurs when array is reverse sorted.
-
-- Best Case Time Complexity: O(n). Best case occurs when array is already sorted.
+- Time Complexity: O(n^2). 
 
 - Auxiliary Space: O(1)

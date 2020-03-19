@@ -7,31 +7,51 @@ The selection sort algorithm sorts an array by repeatedly finding the minimum el
 
 In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.
 
-## Step-by-step example:
-Here is an example of this sort algorithm sorting five elements:
+## Problem to Solve
+
+Given a list of numbers as shown below, please sort them in ascending order.
 ```php
-arr[] = 64 25 12 22 11
-
-// Find the minimum element in arr[0...4]
-// and place it at beginning
-11 25 12 22 64
-
-// Find the minimum element in arr[1...4]
-// and place it at beginning of arr[1...4]
-11 12 25 22 64
-
-// Find the minimum element in arr[2...4]
-// and place it at beginning of arr[2...4]
-11 12 22 25 64
-
-// Find the minimum element in arr[3...4]
-// and place it at beginning of arr[3...4]
-11 12 22 25 64 
+$numbers = [20, 12, 10, 15, 2];
 ```
 
-## Flowchart of the Selection Sort:
+## Pseudocode
 
-![](./img/Selection-sort-flowchart.png)
+### How Selection Sort Works?
+
+1. Set the first element as **minimum**.
+
+![](./img/Selection-sort-0-initial-array.png)
+
+2. Compare **minimum** with the second element. If the second element is smaller than **minimum**, assign second element as **minimum**. Compare **minimum** with the third element. Again, if the third element is smaller, then assign **minimum** to the third element otherwise do nothing. The process goes on until the last element.
+
+![](./img/Selection-sort-0-comparision.png)
+
+3. After each iteration, **minimum** is placed in the front of the unsorted list.
+
+![](./img/Selection-sort-0-swapping.png)
+
+4. For each iteration, indexing starts from the first unsorted element. Step 1 to 3 are repeated until all the elements are placed at their correct positions.
+
+![](./img/Selection-sort-0.png)
+
+![](./img/Selection-sort-1.png)
+
+![](./img/Selection-sort-2.png)
+
+![](./img/Selection-sort-3_1.png)
+
+### Pseudocode of Selection Sort algorithm can be written as follows:
+
+```php
+selectionSort(array, size)
+  repeat (size - 1) times
+  set the first unsorted element as the minimum
+  for each of the unsorted elements
+    if element < currentMinimum
+      set element as new minimum
+  swap minimum with first unsorted position
+end selectionSort
+```
 
 ## Following is the implementations of the Selection Sort:
 ```php
@@ -81,7 +101,5 @@ Sorted array:
 
 ## Analysis
 
-- Time Complexity: O(n2) as there are two nested loops.
+- Time Complexity: O(n^2)
 - Auxiliary Space: O(1)
-- Sorting In Place: Yes
-- Stable : The default implementation is not stable. 

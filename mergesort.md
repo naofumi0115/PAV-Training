@@ -16,10 +16,14 @@ Merge Sort is a divide and conquer algorithm. It works by continually splitting 
 
 When splitting a list, we consider the list is sorted if it contains zero or one element.
 
-#### Split:
+### How Merge Sort Works?
+
+1. Using the Divide and Conquer technique, we divide a problem into subproblems.
+
 ![](./img/merge-sort-split.png)
 
-#### Merge:
+2. When the solution to each subproblem is ready, we 'combine' the results from the subproblems to solve the main problem.
+
 ![](./img/merge-sort-merge.png)
 
 ### Pseudocode of Merge Sort algorithm can be written as follows:

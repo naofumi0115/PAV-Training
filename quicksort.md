@@ -10,27 +10,77 @@ The key process in quickSort is partition(). Target of partitions is, given an a
 
 ## Pseudocode
 
-## The Quicksort function
+### How QuickSort Works?
+
+1. A pivot element is chosen from the array. You can choose any element from the array as the pviot element. Here, we have taken the rightmost (ie. the last element) of the array as the pivot element.
+
+![](./img/quick-sort-0.1_0.png)
+
+2. The elements smaller than the pivot element are put on the left and the elements greater than the pivot element are put on the right.
+
+![](./img/quick-sort-0.2_0.png)
+
+The above arrangement is achieved by the following steps.
+
+a. A pointer is fixed at the pivot element. The pivot element is compared with the elements beginning from the first index. If the element greater than the pivot element is reached, a second pointer is set for that element.
+ 
+b. Now, the pivot element is compared with the other elements. If element smaller than the pivot element is reached, the smaller element is swapped with the greater element found earlier.
+
+![](./img/quick-sort-partition_1.png)
+
+c. The process goes on until the second last element is reached.
+ 
+d. Finally, the pivot element is swapped with the second pointer.
+
+![](./img/quick-sort-0.1-1.png)
+
+3. Pivot elements are again chosen for the left and the right sub-parts separately. Within these sub-parts, the pivot elements are placed at their right position. Then, step 2 is repeated.
+
+![](./img/quick-sort-0.3_0.png)
+
+4. The sub-parts are again divided into smallest sub-parts until each subpart is formed of a single element.
+ 
+5. At this point, the array is already sorted.
+
+### Quicksort uses recursion for sorting the sub-parts.
+
+On the basis of Divide and conquer approach, quicksort algorithm can be explained as:
+
+1. Divide
+The array is divided into subparts taking pivot as the partitioning point. The elements smaller than the pivot are placed to the left of the pivot and the elements greater than the pivot are placed to the right.
+
+2. Conquer
+The left and the right subparts are again partitioned using the by selecting pivot elements for them. This can be achieved by recursively passing the subparts into the algorithm.
+
+3. Combine
+This step does not play a significant role in quicksort. The array is already sorted at the end of the conquer step.
+
+
+You can understand the working of quicksort with the help of an example/illustration below.
+
+![](./img/quick-sort-0.png)
+
+![](./img/quick-sort-1.png)
 
 ### Pseudo Code for recursive QuickSort function :
 
 ```php
-/* low  --> Starting index,  high  --> Ending index */
-quickSort(arr[], low, high)
-{
-    if (low < high)
-    {
-        /* pi is partitioning index, arr[pi] is now
-           at right place */
-        pi = partition(arr, low, high);
+quickSort(array, leftmostIndex, rightmostIndex)
+  if (leftmostIndex < rightmostIndex)
+    pivotIndex <- partition(array,leftmostIndex, rightmostIndex)
+    quickSort(array, leftmostIndex, pivotIndex)
+    quickSort(array, pivotIndex + 1, rightmostIndex)
 
-        quickSort(arr, low, pi - 1);  // Before pi
-        quickSort(arr, pi + 1, high); // After pi
-    }
-}
+partition(array, leftmostIndex, rightmostIndex)
+  set rightmostIndex as pivotIndex
+  storeIndex <- leftmostIndex - 1
+  for i <- leftmostIndex + 1 to rightmostIndex
+    if element[i] < pivotElement
+      swap element[i] and element[storeIndex]
+      storeIndex++
+  swap pivotElement and element[storeIndex+1]
+return storeIndex + 1
 ```
-
-![](./img/QuickSort2.png)
 
 ### The Quicksort function
 
@@ -100,26 +150,20 @@ The code is completed.
 ```php
 <?php 
 function partition(&$array, $left, $right) {
-    $pivotIndex = floor($left + ($right - $left) / 2);
-    $pivotValue = $array[$pivotIndex];
-    $i=$left;
-    $j=$right;
-    while ($i <= $j) {
-        while (($array[$i] < $pivotValue) ) {
+    $pivot = $array[$right];
+    $i = $left -1;
+    for ($j = $left; $j < $right; $j++) {
+          if(($array[$j] < $pivot)){
             $i++;
-        }
-        while (($array[$j] > $pivotValue)) {
-            $j--;
-        }
-        if ($i <= $j ) {
             $temp = $array[$i];
             $array[$i] = $array[$j];
             $array[$j] = $temp;
-            $i++;
-            $j--;
-        }
+          }
     }
-    return $i;
+    $temp = $array[$i + 1];
+    $array[$i + 1] = $array[$right];
+    $array[$right] = $temp;
+    return ($i + 1);
 }
 
 function quicksort(&$array, $left, $right) {
@@ -146,5 +190,5 @@ printArray($arr, $n);
 ```
 ## Analysis
 
-- Time Complexity: O(nLogn) as there are two nested loops.
-- Auxiliary Space: O(1)
+- Time Complexity: O(nLogn)
+- Auxiliary Space: O(logn)
