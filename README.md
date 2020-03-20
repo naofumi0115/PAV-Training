@@ -25,8 +25,8 @@ For developer, we will use Array and Linked List very common, Stack and Queue is
 ## Advanced Data Structure
 
 1. [Tree](./tree.md)
-2. [Trie (Keyword Tree)](./trie.md)
-3. [Segment Tree](./segment-tree.md)
-4. [Binary Indexed](./binary-indexed.md)
-5. [Suffix Tree](./suffix-tree.md)
-6. [Suffix Array](./suffix-array.md)
+2. [Trie (Keyword Tree)]()
+3. [Segment Tree]()
+4. [Binary Indexed]()
+5. [Suffix Tree]()
+6. [Suffix Array]()
