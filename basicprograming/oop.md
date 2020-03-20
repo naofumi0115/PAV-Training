@@ -27,7 +27,7 @@ Because any sending email need sender, receivers, email subject, email body. The
 
 ```php
 <?
-class Emailer {
+abstract class Emailer {
   // Declare properties
   protected $sender;
   protected $recipients;
