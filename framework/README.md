@@ -37,4 +37,7 @@ Now, let start:
 
 ## Homework
 
-
+1. Add colums `phone_number` to table `user`. Update screens `Create` and `Edit`, allow input phone number when create or update user.
+2. Make a screen to show all user information. When user click button `View` on Users List, navigate to this screen.
+3. Update Users List screen as screen shot. Select users by click the checkboxes, when click on button `Delete` (The red button at bottom of Users List table), delete all selected users.
+![](./images/index_1.png)
