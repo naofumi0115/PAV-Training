@@ -19,18 +19,20 @@ touch index.html # create the empty file
 
 To help your source code safe, you should store it on the cloud instead of your local machine.
 
-[Sign up a Github account](https://github.com/join?source=header-home) if you did not have yet.
-> Don't know how to use git? [Check it here](./../docs/tools/git.md)
+Here, I will use GitHub service to store our code.
+
+To do that, [Sign up a Github account](https://github.com/join?source=header-home) if you did not have yet.
+> Don't know how to use git? [Check it here](./../docs/tools/readme.md)
 
 - Create a GitHub repo to save your project.
   > Don't know how to creeate GitHub Repo? [check its document](https://help.github.com/en/github/getting-started-with-github/create-a-repo)
 
 For example, I create a repo `html-css-js`
-![github-repo](./../docs/html-cs-js/images/github-repo-creating.png)
+![github-repo](../docs/html-cs-js/images/github-repo-creating.png)
 
 After created, you'll see a screen like
 
-![github-repo-created](./../docs/html-cs-js/images/github-repo-created.png)
+![github-repo-created](../docs/html-cs-js/images/github-repo-created.png)
 
 Now, push your source code onto GitHub repo on the cloud.
 
