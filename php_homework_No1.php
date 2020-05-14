@@ -10,8 +10,6 @@
       if ($num % 2 == 1){
         $odd_number_sum = $odd_number_sum + $num;
       }
-      else{
-      }
     }
     
     echo $odd_number_sum;
